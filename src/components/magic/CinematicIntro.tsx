@@ -72,7 +72,12 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 h-full w-full object-cover"
+        disablePictureInPicture
+        disableRemotePlayback
+        // @ts-expect-error vendor attribute
+        x-webkit-airplay="deny"
+        className="absolute inset-0 h-full w-full object-cover will-change-transform"
+        style={{ transform: "translateZ(0)", backfaceVisibility: "hidden" }}
       >
         <source src={VIDEO_URL} type="video/webm" />
       </video>
