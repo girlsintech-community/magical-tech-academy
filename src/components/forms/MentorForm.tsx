@@ -72,6 +72,14 @@ export function MentorForm() {
     <div className="envelope mx-auto w-full max-w-xl">
       <div className="wax-seal">M</div>
       <form onSubmit={submit} className="envelope-inner space-y-4">
+        <div className="text-center">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-amber-900/70">
+            For learned wizards & witches
+          </p>
+          <h2 className="font-display mt-1 text-2xl text-amber-950">
+            Mentor Application Letter
+          </h2>
+        </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <F label="Full name">
           <Input value={form.full_name} onChange={(e) => setForm({ ...form, full_name: e.target.value })} />
