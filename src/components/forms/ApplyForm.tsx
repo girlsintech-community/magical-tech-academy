@@ -81,14 +81,23 @@ export function ApplyForm() {
     <div className="mx-auto w-full max-w-2xl">
       <AnimatePresence mode="wait">
         {!result ? (
-          <motion.form
+          <motion.div
             key="form"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            onSubmit={submit}
-            className="magic-card space-y-5 rounded-2xl p-7 sm:p-9"
+            className="envelope"
           >
+            <div className="wax-seal">H</div>
+            <form onSubmit={submit} className="envelope-inner space-y-5">
+              <div className="text-center">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-amber-900/70">
+                  By Owl Post · Ministry of Magical Education
+                </p>
+                <h2 className="font-display mt-1 text-2xl text-amber-950">
+                  Your Application Letter
+                </h2>
+              </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Full name">
                 <Input value={form.full_name} onChange={(e) => update("full_name", e.target.value)} />
