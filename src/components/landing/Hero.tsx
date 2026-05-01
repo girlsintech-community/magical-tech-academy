@@ -105,15 +105,6 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           <SeatCounter />
         </motion.div>
 
-        <motion.button
-          onClick={() => scrollTo("stages")}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 6, 0] }}
-          transition={{ delay: 1.8, y: { repeat: Infinity, duration: 2 } }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-foreground/70 hover:text-gold"
-        >
-          ↓ scroll to discover
-        </motion.button>
       </div>
     </section>
   );
