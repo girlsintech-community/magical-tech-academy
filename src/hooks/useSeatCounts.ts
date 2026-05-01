@@ -25,7 +25,6 @@ export function useSeatCounts(refreshKey = 0) {
   useEffect(() => {
     let alive = true;
     (async () => {
-      // @ts-expect-error rpc typed loosely
       const { data, error } = await supabase.rpc("get_seat_counts");
       if (!alive) return;
       if (!error && data && data[0]) setCounts(data[0] as SeatCounts);

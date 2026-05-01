@@ -52,7 +52,6 @@ export function ApplyForm() {
     }
     setSubmitting(true);
     const d = parsed.data;
-    // @ts-expect-error rpc typed loosely
     const { data, error } = await supabase.rpc("apply_to_program", {
       _full_name: d.full_name,
       _age: d.age,

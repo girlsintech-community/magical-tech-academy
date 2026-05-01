@@ -43,12 +43,11 @@ export function MentorForm() {
     if (!parsed.success) return toast.error(parsed.error.issues[0]?.message ?? "Check the form");
     setBusy(true);
     const d = parsed.data;
-    // @ts-expect-error rpc typed loosely
     const { data, error } = await supabase.rpc("apply_as_mentor", {
       _full_name: d.full_name,
       _email: d.email,
       _profession: d.profession,
-      _linkedin: d.linkedin_url || null,
+      _linkedin: d.linkedin_url || "",
       _expertise: d.expertise,
       _why: d.why_mentor,
     });
