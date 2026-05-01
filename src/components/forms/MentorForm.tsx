@@ -69,7 +69,9 @@ export function MentorForm() {
     );
 
   return (
-    <form onSubmit={submit} className="magic-card mx-auto w-full max-w-xl space-y-4 rounded-2xl p-7">
+    <div className="envelope mx-auto w-full max-w-xl">
+      <div className="wax-seal">M</div>
+      <form onSubmit={submit} className="envelope-inner space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <F label="Full name">
           <Input value={form.full_name} onChange={(e) => setForm({ ...form, full_name: e.target.value })} />
