@@ -10,22 +10,19 @@ const BEATS = [
   "But first, you must prove your spark. Apply, complete your task, then receive your invitation.",
 ];
 
-// Royalty-free magical castle / starry-night ambient loop (Pexels CDN)
-const VIDEO_URL =
-  "https://cdn.pixabay.com/video/2024/02/16/200964-913436494_large.mp4";
-const MUSIC_URL =
-  "https://cdn.pixabay.com/audio/2022/10/30/audio_347111d654.mp3";
+const VIDEO_URL = "/intro.webm";
+const MUSIC_URL = "/intro-music.mp3";
 
 export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
   const [beat, setBeat] = useState(0);
   const [muted, setMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // Music
   useEffect(() => {
     const a = new Audio(MUSIC_URL);
     a.loop = true;
-    a.volume = 0.4;
+    a.volume = 0.55;
     audioRef.current = a;
     a.play().catch(() => {});
     return () => {
@@ -38,12 +35,11 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
     if (audioRef.current) audioRef.current.muted = muted;
   }, [muted]);
 
-  // Auto advance
   useEffect(() => {
     const t = setTimeout(() => {
       if (beat < BEATS.length - 1) setBeat(beat + 1);
       else finish();
-    }, 4500);
+    }, 5200);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [beat]);
@@ -70,16 +66,17 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
       onClick={next}
     >
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 h-full w-full object-cover opacity-70"
+        className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src={VIDEO_URL} type="video/mp4" />
+        <source src={VIDEO_URL} type="video/webm" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/85" />
 
       {/* Top controls */}
       <div className="absolute right-4 top-4 z-10 flex gap-3" onClick={(e) => e.stopPropagation()}>
@@ -108,7 +105,7 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
             exit={{ opacity: 0, y: -20, filter: "blur(8px)" }}
             transition={{ duration: 1.2, ease: [0.2, 0.8, 0.2, 1] }}
             className="font-display max-w-3xl text-2xl leading-relaxed text-[color:var(--parchment)] sm:text-3xl md:text-4xl"
-            style={{ textShadow: "0 2px 30px rgba(0,0,0,0.9)" }}
+            style={{ textShadow: "0 2px 30px rgba(0,0,0,0.95)" }}
           >
             {BEATS[beat]}
           </motion.p>

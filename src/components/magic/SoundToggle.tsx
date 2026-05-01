@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
-const MUSIC_URL =
-  "https://cdn.pixabay.com/audio/2022/10/30/audio_347111d654.mp3"; // royalty-free magical orchestral
+const MUSIC_URL = "/intro-music.mp3";
 
 export function SoundToggle() {
   const [on, setOn] = useState(false);
