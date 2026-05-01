@@ -180,7 +180,8 @@ export function ApplyForm() {
                 </>
               )}
             </Button>
-          </motion.form>
+            </form>
+          </motion.div>
         ) : (
           <motion.div
             key="done"
