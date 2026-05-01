@@ -4,7 +4,7 @@ import { Volume2, VolumeX } from "lucide-react";
 const MUSIC_URL = "/intro-music.mp3";
 
 export function SoundToggle() {
-  const [on, setOn] = useState(false);
+  const [on, setOn] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -12,9 +12,31 @@ export function SoundToggle() {
     a.loop = true;
     a.volume = 0.25;
     audioRef.current = a;
+
+    // Try to autoplay
+    const tryPlay = () => {
+      a.play()
+        .then(() => setOn(true))
+        .catch(() => setOn(false));
+    };
+    tryPlay();
+
+    // If browser blocks autoplay, start on first user interaction
+    const onFirstInteract = () => {
+      if (a.paused) {
+        a.play().then(() => setOn(true)).catch(() => {});
+      }
+      window.removeEventListener("pointerdown", onFirstInteract);
+      window.removeEventListener("keydown", onFirstInteract);
+    };
+    window.addEventListener("pointerdown", onFirstInteract, { once: true });
+    window.addEventListener("keydown", onFirstInteract, { once: true });
+
     return () => {
       a.pause();
       audioRef.current = null;
+      window.removeEventListener("pointerdown", onFirstInteract);
+      window.removeEventListener("keydown", onFirstInteract);
     };
   }, []);
 

@@ -2,12 +2,9 @@ import { motion } from "framer-motion";
 import { Sparkles, Wand2, RotateCcw, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { SeatCounter } from "./SeatCounter";
-import heroBg from "@/assets/hogwarts-hero.jpg";
+import heroBg from "@/assets/hogwarts-hero.webp";
 
 export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
-  const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-
   return (
     <section className="relative isolate min-h-screen overflow-hidden">
       {/* Wallpaper */}
@@ -105,15 +102,6 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           <SeatCounter />
         </motion.div>
 
-        <motion.button
-          onClick={() => scrollTo("stages")}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 6, 0] }}
-          transition={{ delay: 1.8, y: { repeat: Infinity, duration: 2 } }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-foreground/70 hover:text-gold"
-        >
-          ↓ scroll to discover
-        </motion.button>
       </div>
     </section>
   );

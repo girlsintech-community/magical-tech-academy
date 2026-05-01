@@ -1,12 +1,13 @@
 import { SectionHeader } from "./HousesSection";
 import { Brain, Palette, Blocks, Stars } from "lucide-react";
 import { motion } from "framer-motion";
+import { BookCard } from "@/components/magic/BookCard";
 
 const SKILLS = [
-  { icon: Brain, title: "AI & prompt magic", body: "Build with the same models that power the modern world. Learn to think with AI, not just use it." },
-  { icon: Palette, title: "Design that delights", body: "Color, type, motion. Make things people actually want to look at and use." },
-  { icon: Blocks, title: "No-code superpowers", body: "Ship real working apps without writing a single line — Lovable, Bolt, Figma, Canva." },
-  { icon: Stars, title: "Creativity as a craft", body: "Storytelling, pitching, taste. The skills that turn good ideas into great ones." },
+  { Icon: Brain, title: "AI & prompt magic", body: "Build with the same models that power the modern world. Learn to think with AI, not just use it.", accent: "oklch(0.65 0.22 305)" },
+  { Icon: Palette, title: "Design that delights", body: "Color, type, motion. Make things people actually want to look at and use.", accent: "oklch(0.72 0.22 45)" },
+  { Icon: Blocks, title: "No-code superpowers", body: "Ship real working apps without writing a single line — Lovable, Bolt, Figma, Canva.", accent: "oklch(0.68 0.16 155)" },
+  { Icon: Stars, title: "Creativity as a craft", body: "Storytelling, pitching, taste. The skills that turn good ideas into great ones.", accent: "oklch(0.78 0.18 75)" },
 ];
 
 export function LearnSection() {
@@ -17,20 +18,19 @@ export function LearnSection() {
         title="Tools to build the impossible"
         subtitle="No prior coding required. Just curiosity and the willingness to try."
       />
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {SKILLS.map((s, i) => (
-          <motion.div
+          <BookCard
             key={s.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="magic-card rounded-2xl p-6"
+            index={i}
+            title={s.title}
+            subtitle="A spell to learn"
+            accent={s.accent}
+            coverIcon={<s.Icon className="h-6 w-6" />}
+            minHeight={320}
           >
-            <s.icon className="h-7 w-7 text-gold" />
-            <h3 className="font-display mt-4 text-xl">{s.title}</h3>
-            <p className="mt-2 text-sm text-foreground/75">{s.body}</p>
-          </motion.div>
+            {s.body}
+          </BookCard>
         ))}
       </div>
     </section>
