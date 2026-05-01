@@ -39,6 +39,7 @@ function ApplyPage() {
           <ApplyForm />
         </div>
       </main>
+      <Footer />
     </>
   );
 }
