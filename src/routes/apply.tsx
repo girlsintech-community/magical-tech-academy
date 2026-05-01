@@ -3,6 +3,7 @@ import { ApplyForm } from "@/components/forms/ApplyForm";
 import { Starfield } from "@/components/magic/Starfield";
 import { CursorWand } from "@/components/magic/CursorWand";
 import { Navbar } from "@/components/landing/Navbar";
+import { Footer } from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/apply")({
