@@ -5,9 +5,6 @@ import { SeatCounter } from "./SeatCounter";
 import heroBg from "@/assets/hogwarts-hero.webp";
 
 export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
-  const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-
   return (
     <section className="relative isolate min-h-screen overflow-hidden">
       {/* Wallpaper */}
