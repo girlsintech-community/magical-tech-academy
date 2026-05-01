@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Sparkles, Menu, X } from "lucide-react";
 
 const NAV = [
-  { to: "/", label: "Home" },
   { to: "/#houses", label: "Houses" },
   { to: "/#journey", label: "Journey" },
   { to: "/#learn", label: "Learn" },
