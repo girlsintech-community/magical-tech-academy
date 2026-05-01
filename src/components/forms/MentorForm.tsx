@@ -127,7 +127,8 @@ export function MentorForm() {
         {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
         Apply to mentor
       </Button>
-    </form>
+      </form>
+    </div>
   );
 }
 
