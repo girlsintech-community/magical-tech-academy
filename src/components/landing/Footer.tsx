@@ -48,7 +48,7 @@ export function Footer() {
               <p className="font-display text-xl">Hogwarts: A Magical Virtual Tech Summer School</p>
             </div>
             <p className="mt-3 max-w-md text-sm text-foreground/70">
-              A free 14-day journey for 200 of India&apos;s most curious young builders.
+              A free 14 day journey for 100 of India&apos;s most curious young builders.
               Brewed with love by{" "}
               <span className="text-gold">Girls Leading Tech</span>.
             </p>
@@ -67,7 +67,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-foreground/75">
               <li><Link to="/" className="hover:text-gold">The great hall</Link></li>
               <li><a href="/#houses" className="hover:text-gold">The four houses</a></li>
-              <li><a href="/#journey" className="hover:text-gold">The 14-day journey</a></li>
+              <li><a href="/#journey" className="hover:text-gold">The 14 day journey</a></li>
               <li><a href="/#learn" className="hover:text-gold">What you&apos;ll learn</a></li>
             </ul>
           </div>
@@ -94,11 +94,11 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-center gap-3 border-t border-[color:var(--gold)]/15 pt-8 text-center">
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             <span className="h-px w-12 bg-[color:var(--gold)]/30" />
-            <span className="font-display tracking-[0.3em]">DRACO · DORMIENS · NUNQUAM · TITILLANDUS</span>
+            <span className="font-display tracking-[0.3em]">DRACO ~ DORMIENS ~ NUNQUAM ~ TITILLANDUS</span>
             <span className="h-px w-12 bg-[color:var(--gold)]/30" />
           </div>
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Girls Leading Tech · Conjured with{" "}
+            © {new Date().getFullYear()} Girls Leading Tech ~ Conjured with{" "}
             <Heart className="inline h-3 w-3 fill-current text-[color:var(--ember)]" /> in India
           </p>
         </div>
