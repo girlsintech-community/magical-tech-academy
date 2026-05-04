@@ -3,17 +3,17 @@ import { SectionHeader } from "./HousesSection";
 
 const PHASES = [
   {
-    title: "Days 1–4 · Learn the spells",
-    items: ["AI fundamentals", "Design thinking", "Creative storytelling", "House sorting & rituals"],
+    title: "Days 1 to 4 ~ Learn the spells",
+    items: ["AI fundamentals", "Design thinking", "Creative storytelling", "House sorting and rituals"],
     glow: "from-amber-400/20 to-transparent",
   },
   {
-    title: "Days 5–10 · Build your magic",
-    items: ["Pick your project", "Daily mentor sessions", "Build with no-code & AI", "House challenges"],
+    title: "Days 5 to 10 ~ Build your magic",
+    items: ["Pick your project", "Daily mentor sessions", "Build with no code and AI", "House challenges"],
     glow: "from-fuchsia-400/20 to-transparent",
   },
   {
-    title: "Days 11–14 · Showcase",
+    title: "Days 11 to 14 ~ Showcase",
     items: ["Polish your demo", "Pitch your project", "House cup ceremony", "Demo Day livestream"],
     glow: "from-emerald-400/20 to-transparent",
   },
@@ -23,9 +23,9 @@ export function TimelineSection() {
   return (
     <section id="journey" className="relative z-10 mx-auto max-w-5xl px-6 py-24">
       <SectionHeader
-        eyebrow="Your 14-day journey"
+        eyebrow="Your 14 day journey"
         title="Two weeks that change how you see the world"
-        subtitle="June 7 → June 21, 2026 · Free for everyone admitted"
+        subtitle="June 7 to June 21, 2026 ~ Free for everyone admitted"
       />
 
       <div className="relative mt-14">
@@ -47,7 +47,7 @@ export function TimelineSection() {
                 <h3 className="font-display text-xl text-gold">{p.title}</h3>
                 <ul className={`mt-3 space-y-1 text-sm text-foreground/80 ${i % 2 === 0 ? "sm:items-end" : ""}`}>
                   {p.items.map((it) => (
-                    <li key={it}>· {it}</li>
+                    <li key={it}>~ {it}</li>
                   ))}
                 </ul>
               </div>
