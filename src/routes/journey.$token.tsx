@@ -84,7 +84,7 @@ function View({ app, reload }: { app: App; reload: () => void }) {
       <Status
         icon="🌙"
         title="Not this time, brave soul"
-        body="We received many wonderful applications. This wasn't your year — but the world is full of magic, and so are you."
+        body="We received many wonderful applications. This wasn't your year, but the world is full of magic, and so are you."
       />
     );
   if (app.status === "task_invited" || app.status === "task_submitted")
@@ -131,19 +131,19 @@ function TaskForm({ app, reload }: { app: App; reload: () => void }) {
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-10">
-      <p className="text-xs uppercase tracking-[0.3em] text-gold">Stage 2 · The Task</p>
+      <p className="text-xs uppercase tracking-[0.3em] text-gold">Stage 2 ~ The Task</p>
       <h1 className="font-display mt-2 text-4xl">Hello, {app.full_name.split(" ")[0]}</h1>
       <p className="mt-3 text-foreground/80">
         You've been invited to complete a small magical task. Tell us, in your own words:
       </p>
       <p className="font-display mt-4 text-2xl italic text-gold">
-        "Why do you want to join Hogwarts: A Magical Virtual Tech Summer School?"
+        ~ Why do you want to join Hogwarts: A Magical Virtual Tech Summer School? ~
       </p>
 
       <form onSubmit={submit} className="magic-card mt-8 space-y-4 rounded-2xl p-6">
         <div className="space-y-1.5">
           <Label className="text-xs uppercase tracking-wider text-muted-foreground">
-            Your answer · {words} words
+            Your answer ~ {words} words
           </Label>
           <Textarea
             rows={10}
@@ -155,7 +155,7 @@ function TaskForm({ app, reload }: { app: App; reload: () => void }) {
         </div>
         <div className="space-y-1.5">
           <Label className="text-xs uppercase tracking-wider text-muted-foreground">
-            Optional · Link to anything you've made (project, video, drawing, anything)
+            Optional, link to anything you've made (project, video, drawing, anything)
           </Label>
           <Input
             value={link}
@@ -199,7 +199,7 @@ function AcceptanceLetter({ app }: { app: App }) {
       transition={{ duration: 0.8 }}
       className="parchment mt-12 p-10 sm:p-14"
     >
-      <p className="text-xs uppercase tracking-[0.3em]">Hogwarts · A Magical Virtual Tech Summer School</p>
+      <p className="text-xs uppercase tracking-[0.3em]">Hogwarts ~ A Magical Virtual Tech Summer School</p>
       <h1 className="font-display mt-3 text-4xl">Dear {app.full_name},</h1>
       <p className="mt-6 text-base leading-relaxed">
         We are pleased to inform you that you have been <strong>accepted</strong> into the 2026 cohort

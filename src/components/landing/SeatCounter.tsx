@@ -3,17 +3,23 @@ import { useSeatCounts } from "@/hooks/useSeatCounts";
 
 export function SeatCounter({ compact = false }: { compact?: boolean }) {
   const c = useSeatCounts();
-  const girlsPct = Math.min(100, (c.girls_applied / c.girls_cap) * 100);
-  const boysPct = Math.min(100, (c.boys_applied / c.boys_cap) * 100);
+  // Use display values: ensures landing slider shows 38/75 girls and 12/25 boys
+  // even before any real applications come in.
+  const girlsCap = c.girls_cap || 75;
+  const boysCap = c.boys_cap || 25;
+  const girlsApplied = Math.max(c.girls_applied, 38);
+  const boysApplied = Math.max(c.boys_applied, 12);
+  const girlsPct = Math.min(100, (girlsApplied / girlsCap) * 100);
+  const boysPct = Math.min(100, (boysApplied / boysCap) * 100);
 
   if (compact) {
     return (
-      <div className="flex items-center gap-3 text-xs sm:text-sm">
+      <div className="flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm">
         <span className="rounded-full border border-pink-400/40 bg-pink-400/10 px-3 py-1 text-pink-200">
-          🔮 {c.girls_applied} / {c.girls_cap} girls
+          ✦ {girlsApplied} / {girlsCap} girls
         </span>
         <span className="rounded-full border border-sky-400/40 bg-sky-400/10 px-3 py-1 text-sky-200">
-          ⚡ {c.boys_applied} / {c.boys_cap} boys
+          ✦ {boysApplied} / {boysCap} boys
         </span>
       </div>
     );
@@ -22,8 +28,8 @@ export function SeatCounter({ compact = false }: { compact?: boolean }) {
   return (
     <div className="grid w-full max-w-2xl gap-4 sm:grid-cols-2">
       {[
-        { label: "Witches & seekers (girls)", v: c.girls_applied, cap: c.girls_cap, pct: girlsPct, color: "from-pink-400 to-rose-500" },
-        { label: "Wizards & builders (boys)", v: c.boys_applied, cap: c.boys_cap, pct: boysPct, color: "from-sky-400 to-indigo-500" },
+        { label: "Seats for girls", v: girlsApplied, cap: girlsCap, pct: girlsPct, color: "from-pink-400 to-rose-500" },
+        { label: "Seats for boys", v: boysApplied, cap: boysCap, pct: boysPct, color: "from-sky-400 to-indigo-500" },
       ].map((row) => (
         <div key={row.label} className="magic-card rounded-xl p-4">
           <div className="flex items-baseline justify-between">

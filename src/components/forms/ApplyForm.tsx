@@ -65,7 +65,7 @@ export function ApplyForm() {
     });
     setSubmitting(false);
     if (error) {
-      toast.error("The owl got lost — please try again");
+      toast.error("The owl got lost, please try again");
       return;
     }
     const r = (data as Result[])?.[0];
@@ -92,7 +92,7 @@ export function ApplyForm() {
             <form onSubmit={submit} className="envelope-inner space-y-5">
               <div className="text-center">
                 <p className="text-[10px] uppercase tracking-[0.4em] text-amber-900/70">
-                  By Owl Post · Ministry of Magical Education
+                  By Owl Post, Ministry of Magical Education
                 </p>
                 <h2 className="font-display mt-1 text-2xl text-amber-950">
                   Your Application Letter
@@ -102,7 +102,7 @@ export function ApplyForm() {
               <Field label="Full name">
                 <Input value={form.full_name} onChange={(e) => update("full_name", e.target.value)} />
               </Field>
-              <Field label="Age (8–18)">
+              <Field label="Age (8 to 18)">
                 <Input
                   type="number"
                   min={8}
@@ -134,7 +134,7 @@ export function ApplyForm() {
                   onChange={(e) => update("email", e.target.value)}
                 />
               </Field>
-              <Field label="Parent / guardian email">
+              <Field label="Parent or guardian email">
                 <Input
                   type="email"
                   value={form.parent_email}
@@ -145,7 +145,7 @@ export function ApplyForm() {
               <Field label="School">
                 <Input value={form.school} onChange={(e) => update("school", e.target.value)} />
               </Field>
-              <Field label="Grade / class">
+              <Field label="Grade or class">
                 <Input value={form.grade} onChange={(e) => update("grade", e.target.value)} />
               </Field>
             </div>
@@ -160,8 +160,8 @@ export function ApplyForm() {
             </Field>
 
             <p className="text-xs text-muted-foreground">
-              Note: A girl applies as <em>girl</em>, a boy as <em>boy</em>. We have 150 seats for
-              girls and 50 for boys this year. Once seats are full, you'll join the waitlist.
+              Note: A girl applies as <em>girl</em>, a boy as <em>boy</em>. We have 75 seats for
+              girls and 25 for boys this year. Once seats are full, you'll join the waitlist.
             </p>
 
             <Button
@@ -172,7 +172,7 @@ export function ApplyForm() {
             >
               {submitting ? (
                 <>
-                  <Loader2 className="h-4 w-4 animate-spin" /> Sending your owl…
+                  <Loader2 className="h-4 w-4 animate-spin" /> Sending your owl,
                 </>
               ) : (
                 <>

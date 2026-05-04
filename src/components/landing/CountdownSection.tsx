@@ -40,7 +40,7 @@ export function CountdownSection() {
         ))}
       </div>
       <p className="mt-6 text-sm text-muted-foreground">
-        7 June 2026 · 9:00 AM IST · Demo Day on 21 June 2026
+        7 June 2026 ~ 9:00 AM IST ~ Demo Day on 21 June 2026
       </p>
     </section>
   );

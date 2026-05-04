@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Wand2 } from "lucide-react";
 import { toast } from "sonner";
 
-const EXPERTISE = ["AI", "Design", "No-Code", "Web Dev", "Storytelling", "Career"];
+const EXPERTISE = ["AI", "Design", "No Code", "Web Dev", "Storytelling", "Career"];
 
 const schema = z.object({
   full_name: z.string().trim().min(2).max(80),
@@ -74,7 +74,7 @@ export function MentorForm() {
       <form onSubmit={submit} className="envelope-inner space-y-4">
         <div className="text-center">
           <p className="text-[10px] uppercase tracking-[0.4em] text-amber-900/70">
-            For learned wizards & witches
+            For learned mentors and guides
           </p>
           <h2 className="font-display mt-1 text-2xl text-amber-950">
             Mentor Application Letter
@@ -90,7 +90,7 @@ export function MentorForm() {
         <F label="Profession">
           <Input value={form.profession} onChange={(e) => setForm({ ...form, profession: e.target.value })} />
         </F>
-        <F label="LinkedIn / portfolio (optional)">
+        <F label="LinkedIn or portfolio (optional)">
           <Input value={form.linkedin_url} onChange={(e) => setForm({ ...form, linkedin_url: e.target.value })} />
         </F>
       </div>

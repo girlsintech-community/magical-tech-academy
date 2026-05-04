@@ -15,8 +15,8 @@ const FALLBACK: SeatCounts = {
   boys_applied: 0,
   girls_accepted: 0,
   boys_accepted: 0,
-  girls_cap: 150,
-  boys_cap: 50,
+  girls_cap: 75,
+  boys_cap: 25,
 };
 
 export function useSeatCounts(refreshKey = 0) {

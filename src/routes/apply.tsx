@@ -10,7 +10,7 @@ export const Route = createFileRoute("/apply")({
   component: ApplyPage,
   head: () => ({
     meta: [
-      { title: "Apply · Hogwarts: A Magical Virtual Tech Summer School" },
+      { title: "Apply ~ Hogwarts: A Magical Virtual Tech Summer School" },
       { name: "description", content: "Send your owl. Apply to a free 14-day magical tech summer school for students 8–18 across India." },
     ],
   }),

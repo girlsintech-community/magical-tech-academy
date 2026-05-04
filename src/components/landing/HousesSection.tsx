@@ -6,30 +6,26 @@ const HOUSES = [
   {
     name: "Fireforge",
     tagline: "Bold builders",
-    color: "var(--fireforge)",
     Icon: Flame,
     desc: "You charge at hard problems with energy and grit. You'd rather build the thing than wait for permission.",
   },
   {
     name: "Brightmind",
     tagline: "Curious thinkers",
-    color: "var(--brightmind)",
     Icon: BookOpen,
     desc: "You love untangling ideas. You ask better questions than most adults and you read the docs for fun.",
   },
   {
     name: "Codecraft",
     tagline: "Strategic creators",
-    color: "var(--codecraft)",
     Icon: Code2,
     desc: "You see patterns. You plan three moves ahead. The world is one giant board to be cleverly arranged.",
   },
   {
     name: "Sparkroot",
     tagline: "Collaborators",
-    color: "var(--sparkroot)",
     Icon: Sprout,
-    desc: "You make every team better. Kindness, patience, follow-through — your magic is the people around you.",
+    desc: "You make every team better. Kindness, patience, follow-through, your magic is the people around you.",
   },
 ];
 
@@ -39,7 +35,7 @@ export function HousesSection() {
       <SectionHeader
         eyebrow="The Four Houses"
         title="Find your magic"
-        subtitle="Every student is sorted into a house — your tribe for the 14-day journey, your team in the final showcase. Tap a tome to open it."
+        subtitle="Every student is sorted into a house, your tribe for the 14 day journey, your team in the final showcase. Tap a tome to open it."
       />
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {HOUSES.map((h, i) => (
@@ -48,7 +44,6 @@ export function HousesSection() {
             index={i}
             title={h.name}
             subtitle={h.tagline}
-            accent={h.color}
             coverIcon={<h.Icon className="h-6 w-6" />}
             minHeight={340}
           >
