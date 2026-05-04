@@ -29,7 +29,7 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           transition={{ duration: 0.8 }}
           className="rounded-full border border-[color:var(--gold)]/30 bg-black/30 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.4em] text-gold backdrop-blur sm:text-xs"
         >
-          Girls Leading Tech · Class of 2026
+          Girls Leading Tech presents
         </motion.p>
 
         <motion.h1
@@ -59,8 +59,8 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           className="mx-auto mt-7 max-w-2xl text-sm text-foreground/85 sm:text-lg"
           style={{ textShadow: "0 2px 14px rgba(0,0,0,0.7)" }}
         >
-          A 14-day journey where AI meets imagination. Free for 200 chosen students,
-          ages 8–18, across India. June 7 → June 21, 2026.
+          A 14 day journey where AI meets imagination. Free for 100 chosen students,
+          ages 8 to 18, across India. June 7 to June 21, 2026.
         </motion.p>
 
         <motion.div
