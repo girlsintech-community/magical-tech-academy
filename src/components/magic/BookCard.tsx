@@ -77,10 +77,11 @@ export function BookCard({
       {/* Cover */}
       <div className="book-cover">
         <div
-          className="grid h-12 w-12 place-items-center rounded-full text-white shadow-lg"
+          className="grid h-12 w-12 place-items-center rounded-full text-foreground shadow-lg"
           style={{
-            background: `linear-gradient(135deg, ${accent}, color-mix(in oklab, ${accent} 60%, black))`,
-            boxShadow: `0 0 24px -4px ${accent}`,
+            background: `linear-gradient(135deg, oklch(0.22 0.05 280 / 0.9), oklch(0.14 0.04 270 / 0.9))`,
+            border: `1px solid color-mix(in oklab, ${accent} 50%, transparent)`,
+            boxShadow: `0 0 18px -4px ${accent}`,
           }}
         >
           {coverIcon ?? <BookOpen className="h-6 w-6" />}
