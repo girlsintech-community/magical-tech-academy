@@ -381,3 +381,59 @@
 }
 .book.is-open .book-spine-glow { opacity: 1; }
 
+/* ============================================================
+   MAGICAL SCROLLBAR
+   ============================================================ */
+html { scrollbar-gutter: stable; scrollbar-color: var(--gold) transparent; }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track {
+  background:
+    linear-gradient(180deg,
+      oklch(0.10 0.04 270) 0%,
+      oklch(0.16 0.06 280) 50%,
+      oklch(0.10 0.04 270) 100%);
+  border-left: 1px solid color-mix(in oklab, var(--gold) 20%, transparent);
+}
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(180deg,
+      oklch(0.88 0.17 88) 0%,
+      oklch(0.72 0.22 45) 50%,
+      oklch(0.55 0.22 25) 100%);
+  border-radius: 999px;
+  border: 2px solid oklch(0.10 0.04 270);
+  box-shadow:
+    0 0 10px var(--gold),
+    inset 0 0 4px oklch(1 0 0 / 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  box-shadow:
+    0 0 18px var(--gold),
+    0 0 32px var(--ember),
+    inset 0 0 6px oklch(1 0 0 / 0.4);
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* Mobile: thinner scrollbar */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+}
+
+/* ============================================================
+   RESPONSIVE TWEAKS
+   ============================================================ */
+@media (max-width: 640px) {
+  .envelope { padding: 3rem 1.25rem 1.5rem; }
+  .envelope::before { height: 70px; }
+  .wax-seal { top: 42px; width: 52px; height: 52px; font-size: 1.1rem; }
+  .envelope-inner { margin-top: 2rem; }
+  .book { min-height: 260px; }
+  .book-cover, .book-page { padding: 1.25rem; }
+}
+
+/* Hide custom wand cursor on touch devices, restore native cursor */
+@media (hover: none), (pointer: coarse) {
+  html, body, * { cursor: auto !important; }
+}
+
+
