@@ -4,9 +4,9 @@ import { SkipForward, Volume2, VolumeX } from "lucide-react";
 
 const BEATS = [
   "In a world where magic meets code…",
-  "You have been chosen to apply for a 14-day journey at the Magical Virtual Tech Summer School.",
-  "Only 200 young witches, wizards and builders will be admitted this year.",
-  "Four houses await — each with its own gift.",
+  "You have been chosen to apply for a 14 day journey at the Magical Virtual Tech Summer School.",
+  "Only 100 young builders will be admitted this year.",
+  "Four houses await, each with its own gift.",
   "But first, you must prove your spark. Apply, complete your task, then receive your invitation.",
 ];
 
