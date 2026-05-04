@@ -65,7 +65,7 @@ export function BookCard({
             {children}
           </div>
           <div className="mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-amber-900/70">
-            <span>· read ·</span>
+            <span>~ read ~</span>
             <span>tap to close</span>
           </div>
         </div>
