@@ -36,7 +36,7 @@ export function Footer() {
             By owl, by raven, by carrier pigeon
           </p>
           <p className="font-display mt-2 text-2xl italic text-amber-950 sm:text-3xl">
-            ~ The wand chooses the wizard. The school chooses the spark. ~
+            "The wand chooses the wizard. The school chooses the spark."
           </p>
         </div>
 
