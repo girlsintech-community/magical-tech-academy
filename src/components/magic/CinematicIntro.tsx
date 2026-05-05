@@ -16,6 +16,7 @@ const MUSIC_URL = "/intro-music.mp3";
 export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
   const [beat, setBeat] = useState(0);
   const [muted, setMuted] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -23,11 +24,29 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
     const a = new Audio(MUSIC_URL);
     a.loop = true;
     a.volume = 0.55;
+    a.preload = "auto";
     audioRef.current = a;
     a.play().catch(() => {});
     return () => {
       a.pause();
       audioRef.current = null;
+    };
+  }, []);
+
+  // Preload the video before showing the storyline
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const onReady = () => setVideoReady(true);
+    if (v.readyState >= 3) onReady();
+    v.addEventListener("canplaythrough", onReady);
+    v.addEventListener("loadeddata", onReady);
+    // Safety fallback so we never get stuck on the loader
+    const fallback = setTimeout(onReady, 4000);
+    return () => {
+      v.removeEventListener("canplaythrough", onReady);
+      v.removeEventListener("loadeddata", onReady);
+      clearTimeout(fallback);
     };
   }, []);
 
