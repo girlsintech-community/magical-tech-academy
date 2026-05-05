@@ -101,6 +101,23 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/85" />
 
+      {/* Loading veil while video buffers */}
+      <AnimatePresence>
+        {!videoReady && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black"
+          >
+            <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/20 border-t-[color:var(--gold)]" />
+            <p className="mt-6 text-xs uppercase tracking-[0.4em] text-white/70">
+              Lighting the candles…
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Top controls */}
       <div className="absolute right-4 top-4 z-10 flex gap-3" onClick={(e) => e.stopPropagation()}>
         <button
