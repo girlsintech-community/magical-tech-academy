@@ -16,6 +16,7 @@ const MUSIC_URL = "/intro-music.mp3";
 export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
   const [beat, setBeat] = useState(0);
   const [muted, setMuted] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -23,6 +24,7 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
     const a = new Audio(MUSIC_URL);
     a.loop = true;
     a.volume = 0.55;
+    a.preload = "auto";
     audioRef.current = a;
     a.play().catch(() => {});
     return () => {
@@ -31,18 +33,36 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
     };
   }, []);
 
+  // Preload the video before showing the storyline
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const onReady = () => setVideoReady(true);
+    if (v.readyState >= 3) onReady();
+    v.addEventListener("canplaythrough", onReady);
+    v.addEventListener("loadeddata", onReady);
+    // Safety fallback so we never get stuck on the loader
+    const fallback = setTimeout(onReady, 4000);
+    return () => {
+      v.removeEventListener("canplaythrough", onReady);
+      v.removeEventListener("loadeddata", onReady);
+      clearTimeout(fallback);
+    };
+  }, []);
+
   useEffect(() => {
     if (audioRef.current) audioRef.current.muted = muted;
   }, [muted]);
 
   useEffect(() => {
+    if (!videoReady) return;
     const t = setTimeout(() => {
       if (beat < BEATS.length - 1) setBeat(beat + 1);
       else finish();
     }, 5200);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [beat]);
+  }, [beat, videoReady]);
 
   const finish = () => {
     try {
@@ -80,6 +100,23 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
         <source src={VIDEO_URL} type="video/webm" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/85" />
+
+      {/* Loading veil while video buffers */}
+      <AnimatePresence>
+        {!videoReady && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black"
+          >
+            <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/20 border-t-[color:var(--gold)]" />
+            <p className="mt-6 text-xs uppercase tracking-[0.4em] text-white/70">
+              Lighting the candles…
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Top controls */}
       <div className="absolute right-4 top-4 z-10 flex gap-3" onClick={(e) => e.stopPropagation()}>
