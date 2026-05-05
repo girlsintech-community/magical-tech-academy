@@ -55,13 +55,14 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
   }, [muted]);
 
   useEffect(() => {
+    if (!videoReady) return;
     const t = setTimeout(() => {
       if (beat < BEATS.length - 1) setBeat(beat + 1);
       else finish();
     }, 5200);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [beat]);
+  }, [beat, videoReady]);
 
   const finish = () => {
     try {
