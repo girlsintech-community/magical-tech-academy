@@ -5,6 +5,7 @@ import { CursorWand } from "@/components/magic/CursorWand";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
+import mentorBg from "@/assets/mentor-bg.webp";
 
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
@@ -19,6 +20,11 @@ export const Route = createFileRoute("/mentor")({
 function MentorPage() {
   return (
     <>
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center"
+        style={{ backgroundImage: `url(${mentorBg})` }}
+      />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-black/70 via-background/80 to-background" />
       <Starfield />
       <CursorWand />
       <Navbar />
