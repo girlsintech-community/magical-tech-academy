@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "./HousesSection";
+import journeyBg from "@/assets/mentor-bg.webp";
 
 const PHASES = [
   {
@@ -21,7 +22,13 @@ const PHASES = [
 
 export function TimelineSection() {
   return (
-    <section id="journey" className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+    <section id="journey" className="relative z-10 overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${journeyBg})` }}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/85 to-background" />
+      <div className="mx-auto max-w-5xl px-6 py-24">
       <SectionHeader
         eyebrow="Your 14 day journey"
         title="Two weeks that change how you see the world"
@@ -54,6 +61,7 @@ export function TimelineSection() {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

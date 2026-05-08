@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Flame, BookOpen, Code2, Sprout } from "lucide-react";
 import { BookCard } from "@/components/magic/BookCard";
+import housesBg from "@/assets/sorting-hat-bg.webp";
 
 const HOUSES = [
   {
@@ -31,7 +32,13 @@ const HOUSES = [
 
 export function HousesSection() {
   return (
-    <section id="houses" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
+    <section id="houses" className="relative z-10 overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${housesBg})` }}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/85 to-background" />
+      <div className="mx-auto max-w-6xl px-6 py-24">
       <SectionHeader
         eyebrow="The Four Houses"
         title="Find your magic"
@@ -50,6 +57,7 @@ export function HousesSection() {
             {h.desc}
           </BookCard>
         ))}
+      </div>
       </div>
     </section>
   );

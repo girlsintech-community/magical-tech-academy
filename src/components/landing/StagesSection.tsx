@@ -1,6 +1,7 @@
 import { Mail, Sparkles, ScrollText } from "lucide-react";
 import { SectionHeader } from "./HousesSection";
 import { BookCard } from "@/components/magic/BookCard";
+import owlBg from "@/assets/owl-bg.webp";
 
 const STAGES = [
   {
@@ -28,7 +29,13 @@ const STAGES = [
 
 export function StagesSection() {
   return (
-    <section id="stages" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
+    <section id="stages" className="relative z-10 overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${owlBg})` }}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/85 to-background" />
+      <div className="mx-auto max-w-6xl px-6 py-24">
       <SectionHeader
         eyebrow="How you get in"
         title="Three stages to your invitation"
@@ -48,6 +55,7 @@ export function StagesSection() {
             <p className="mt-2">{s.body}</p>
           </BookCard>
         ))}
+      </div>
       </div>
     </section>
   );

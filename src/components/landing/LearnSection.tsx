@@ -2,6 +2,7 @@ import { SectionHeader } from "./HousesSection";
 import { Brain, Palette, Blocks, Stars } from "lucide-react";
 import { motion } from "framer-motion";
 import { BookCard } from "@/components/magic/BookCard";
+import learnBg from "@/assets/apply-bg.webp";
 
 const SKILLS = [
   { Icon: Brain, title: "AI and prompt magic", body: "Build with the same models that power the modern world. Learn to think with AI, not just use it." },
@@ -12,7 +13,13 @@ const SKILLS = [
 
 export function LearnSection() {
   return (
-    <section id="learn" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
+    <section id="learn" className="relative z-10 overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${learnBg})` }}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/85 to-background" />
+      <div className="mx-auto max-w-6xl px-6 py-24">
       <SectionHeader
         eyebrow="What you'll learn"
         title="Tools to build the impossible"
@@ -31,6 +38,7 @@ export function LearnSection() {
             {s.body}
           </BookCard>
         ))}
+      </div>
       </div>
     </section>
   );
