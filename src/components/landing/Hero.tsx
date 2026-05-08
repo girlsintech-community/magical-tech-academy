@@ -27,7 +27,8 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="rounded-full border border-[color:var(--gold)]/30 bg-black/30 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.4em] text-gold backdrop-blur sm:text-xs"
+          className="font-display text-[11px] uppercase tracking-[0.5em] text-gold sm:text-xs"
+          style={{ textShadow: "0 2px 14px rgba(0,0,0,0.7)" }}
         >
           Girls Leading Tech presents
         </motion.p>
