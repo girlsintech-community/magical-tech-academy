@@ -1,4 +1,4 @@
-import { Mail, Sparkles, Instagram, Github, Heart } from "lucide-react";
+import { Mail, Sparkles, Instagram, Github, Heart, Linkedin, Youtube, Twitter, MessageCircle, BookOpen } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 export function Footer() {
@@ -79,13 +79,27 @@ export function Footer() {
               <li><Link to="/mentor" className="hover:text-gold">Become a mentor</Link></li>
               <li><a href="mailto:girlsleadingtech@gmail.com?subject=Partner with hogwartz" className="hover:text-gold">Partner with us</a></li>
             </ul>
-            <div className="mt-5 flex items-center gap-2">
-              <a aria-label="Instagram" href="#" className="grid h-8 w-8 place-items-center rounded-full border border-[color:var(--gold)]/30 text-foreground/70 transition hover:border-[color:var(--gold)] hover:text-gold">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a aria-label="GitHub" href="#" className="grid h-8 w-8 place-items-center rounded-full border border-[color:var(--gold)]/30 text-foreground/70 transition hover:border-[color:var(--gold)] hover:text-gold">
-                <Github className="h-4 w-4" />
-              </a>
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              {[
+                { label: "LinkedIn", href: "https://www.linkedin.com/company/girlsleadingtech", Icon: Linkedin },
+                { label: "Instagram", href: "https://www.instagram.com/girlsleadingtech", Icon: Instagram },
+                { label: "X (Twitter)", href: "https://x.com/GirlLeadingTech", Icon: Twitter },
+                { label: "YouTube", href: "https://youtube.com/@girlsleadingtech", Icon: Youtube },
+                { label: "WhatsApp", href: "https://whatsapp.com/channel/0029VayYXL4K5cD7Zrzq052G", Icon: MessageCircle },
+                { label: "Substack", href: "https://girlsintech.substack.com/", Icon: BookOpen },
+                { label: "GitHub", href: "https://github.com/girlsleadingtech", Icon: Github },
+              ].map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  aria-label={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="grid h-8 w-8 place-items-center rounded-full border border-[color:var(--gold)]/30 text-foreground/70 transition hover:border-[color:var(--gold)] hover:text-gold"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
