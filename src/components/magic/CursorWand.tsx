@@ -98,23 +98,6 @@ export function CursorWand() {
 
   return (
     <>
-      {/* Torchlight halo — brightens the area around the wand tip */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed z-[55]"
-        style={{
-          left: pos.x,
-          top: pos.y,
-          width: 520,
-          height: 520,
-          transform: "translate(-50%, -50%)",
-          background:
-            "radial-gradient(circle, rgba(255,210,140,0.55) 0%, rgba(255,170,80,0.32) 18%, rgba(220,120,60,0.16) 38%, rgba(120,60,200,0.08) 60%, transparent 75%)",
-          mixBlendMode: "screen",
-          filter: "blur(6px)",
-          transition: "opacity 200ms ease",
-        }}
-      />
       <canvas
         ref={ref}
         aria-hidden="true"
