@@ -9,7 +9,7 @@ function NotFoundComponent() {
         <h1 className="font-display text-7xl text-gold">404</h1>
         <p className="mt-3 text-foreground/80">This page is hidden in another castle.</p>
         <a href="/" className="mt-6 inline-block rounded-full bg-gold px-5 py-2 text-sm font-semibold text-[color:var(--primary-foreground)]">
-          Return to Hogwarts
+          Return to hogwartz
         </a>
       </div>
     </div>
@@ -21,14 +21,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Hogwarts: A Magical Virtual Tech Summer School — Girls Leading Tech" },
+      { title: "hogwartz: A Magical Virtual Tech Summer School — Girls Leading Tech" },
       {
         name: "description",
         content:
           "A free 14-day virtual tech summer school for students 8–18 across India. Learn AI, design and creation. June 7–21, 2026. Only 200 seats.",
       },
       { name: "author", content: "Girls Leading Tech" },
-      { property: "og:title", content: "Hogwarts: A Magical Virtual Tech Summer School" },
+      { property: "og:title", content: "hogwartz: A Magical Virtual Tech Summer School" },
       { property: "og:description", content: "A free 14-day magical tech summer school. June 7–21, 2026." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

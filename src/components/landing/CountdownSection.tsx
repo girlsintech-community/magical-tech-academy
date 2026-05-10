@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { SectionHeader } from "./HousesSection";
+import countdownBg from "@/assets/countdown-hat-bg.webp";
 
 const TARGET = new Date("2026-06-07T09:00:00+05:30").getTime();
 
@@ -25,23 +26,30 @@ export function CountdownSection() {
     { l: "Seconds", v: t.s },
   ];
   return (
-    <section className="relative z-10 mx-auto max-w-5xl px-6 py-24 text-center">
-      <SectionHeader eyebrow="The clock is ticking" title="Until the gates open" />
-      <div className="mt-10 grid grid-cols-4 gap-3 sm:gap-6">
-        {cells.map((c) => (
-          <div key={c.l} className="magic-card rounded-2xl p-4 sm:p-6">
-            <div className="font-display text-3xl text-gold sm:text-5xl">
-              {String(c.v).padStart(2, "0")}
+    <section className="relative z-10 overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${countdownBg})` }}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/80 to-background" />
+      <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+        <SectionHeader eyebrow="The clock is ticking" title="Until the gates open" />
+        <div className="mt-10 grid grid-cols-4 gap-3 sm:gap-6">
+          {cells.map((c) => (
+            <div key={c.l} className="magic-card rounded-2xl p-4 sm:p-6">
+              <div className="font-display text-3xl text-gold sm:text-5xl">
+                {String(c.v).padStart(2, "0")}
+              </div>
+              <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
+                {c.l}
+              </div>
             </div>
-            <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
-              {c.l}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <p className="mt-6 text-sm text-muted-foreground">
+          7 June 2026 ~ 9:00 AM IST ~ Demo Day on 21 June 2026
+        </p>
       </div>
-      <p className="mt-6 text-sm text-muted-foreground">
-        7 June 2026 ~ 9:00 AM IST ~ Demo Day on 21 June 2026
-      </p>
     </section>
   );
 }
