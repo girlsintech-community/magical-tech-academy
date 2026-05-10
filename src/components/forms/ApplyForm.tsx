@@ -198,7 +198,7 @@ export function ApplyForm() {
             ) : (
               <p className="mt-3 text-sm">
                 Watch your inbox. If your profile sparks our interest, you will receive a short
-                magical task. Complete it well, and your official Hogwarts invitation will arrive.
+                magical task. Complete it well, and your official hogwartz invitation will arrive.
               </p>
             )}
             <div className="mt-6 rounded-md border border-amber-700/40 bg-white/40 p-4 text-left text-xs">

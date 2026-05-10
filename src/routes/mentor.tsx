@@ -11,7 +11,7 @@ export const Route = createFileRoute("/mentor")({
   component: MentorPage,
   head: () => ({
     meta: [
-      { title: "Become a mentor ~ Hogwarts: A Magical Virtual Tech Summer School" },
+      { title: "Become a mentor ~ hogwartz: A Magical Virtual Tech Summer School" },
       { name: "description", content: "Designers, engineers, founders, artists, teachers — share your craft with the next generation of young builders." },
     ],
   }),

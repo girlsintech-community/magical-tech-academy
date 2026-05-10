@@ -137,7 +137,7 @@ function TaskForm({ app, reload }: { app: App; reload: () => void }) {
         You've been invited to complete a small magical task. Tell us, in your own words:
       </p>
       <p className="font-display mt-4 text-2xl italic text-gold">
-        ~ Why do you want to join Hogwarts: A Magical Virtual Tech Summer School? ~
+        ~ Why do you want to join hogwartz: A Magical Virtual Tech Summer School? ~
       </p>
 
       <form onSubmit={submit} className="magic-card mt-8 space-y-4 rounded-2xl p-6">
@@ -199,11 +199,11 @@ function AcceptanceLetter({ app }: { app: App }) {
       transition={{ duration: 0.8 }}
       className="parchment mt-12 p-10 sm:p-14"
     >
-      <p className="text-xs uppercase tracking-[0.3em]">Hogwarts ~ A Magical Virtual Tech Summer School</p>
+      <p className="text-xs uppercase tracking-[0.3em]">hogwartz ~ A Magical Virtual Tech Summer School</p>
       <h1 className="font-display mt-3 text-4xl">Dear {app.full_name},</h1>
       <p className="mt-6 text-base leading-relaxed">
         We are pleased to inform you that you have been <strong>accepted</strong> into the 2026 cohort
-        of Hogwarts: A Magical Virtual Tech Summer School. Please find enclosed your
+        of hogwartz: A Magical Virtual Tech Summer School. Please find enclosed your
         official welcome and house assignment.
       </p>
       {app.house && (
