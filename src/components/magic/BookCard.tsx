@@ -9,6 +9,8 @@ type Props = {
   accent?: string;
   /** Cover icon (rendered above the title). */
   coverIcon?: ReactNode;
+  /** Optional cover image URL — when set, the cover renders this image as background instead of the icon block. */
+  coverImage?: string;
   /** Page contents (revealed when opened). */
   children: ReactNode;
   /** Index for stagger. */
