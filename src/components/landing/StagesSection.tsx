@@ -21,8 +21,8 @@ const STAGES = [
   {
     n: "03",
     title: "Receive your invitation",
-    subtitle: "Stage III, Hogwarts Letter",
-    body: "If your spark is bright, your official Hogwarts invitation arrives, sealed, sorted into a house, and ready to begin.",
+    subtitle: "Stage III, hogwartz Letter",
+    body: "If your spark is bright, your official hogwartz invitation arrives, sealed, sorted into a house, and ready to begin.",
     Icon: ScrollText,
   },
 ];

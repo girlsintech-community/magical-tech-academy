@@ -40,7 +40,7 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           className="font-display mt-6 text-5xl leading-[1] sm:text-7xl md:text-[8.5rem]"
           style={{ textShadow: "0 8px 40px rgba(0,0,0,0.6)" }}
         >
-          <span className="shimmer-text">Hogwarts</span>
+          <span className="shimmer-text">hogwartz</span>
         </motion.h1>
 
         <motion.p

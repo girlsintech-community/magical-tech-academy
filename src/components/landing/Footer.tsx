@@ -45,7 +45,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 text-gold">
               <Sparkles className="h-5 w-5" />
-              <p className="font-display text-xl">Hogwarts: A Magical Virtual Tech Summer School</p>
+              <p className="font-display text-xl">hogwartz: A Magical Virtual Tech Summer School</p>
             </div>
             <p className="mt-3 max-w-md text-sm text-foreground/70">
               A free 14 day journey for 100 of India&apos;s most curious young builders.
@@ -77,7 +77,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-foreground/75">
               <li><Link to="/apply" className="hover:text-gold">Apply as a student</Link></li>
               <li><Link to="/mentor" className="hover:text-gold">Become a mentor</Link></li>
-              <li><a href="mailto:girlsleadingtech@gmail.com?subject=Partner with Hogwarts" className="hover:text-gold">Partner with us</a></li>
+              <li><a href="mailto:girlsleadingtech@gmail.com?subject=Partner with hogwartz" className="hover:text-gold">Partner with us</a></li>
             </ul>
             <div className="mt-5 flex items-center gap-2">
               <a aria-label="Instagram" href="#" className="grid h-8 w-8 place-items-center rounded-full border border-[color:var(--gold)]/30 text-foreground/70 transition hover:border-[color:var(--gold)] hover:text-gold">

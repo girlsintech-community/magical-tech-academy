@@ -10,7 +10,7 @@ export function SoundToggle() {
   useEffect(() => {
     const a = new Audio(MUSIC_URL);
     a.loop = true;
-    a.volume = 0.25;
+    a.volume = 1.0;
     audioRef.current = a;
 
     // Try to autoplay

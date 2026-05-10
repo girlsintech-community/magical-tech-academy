@@ -9,7 +9,7 @@ import { Hero } from "@/components/landing/Hero";
 import { StagesSection } from "@/components/landing/StagesSection";
 import { HousesSection } from "@/components/landing/HousesSection";
 import { TimelineSection } from "@/components/landing/TimelineSection";
-import { LearnSection, TestimonialsSection } from "@/components/landing/LearnSection";
+import { LearnSection } from "@/components/landing/LearnSection";
 import { CountdownSection } from "@/components/landing/CountdownSection";
 
 export function HogwartsLanding() {
@@ -42,7 +42,6 @@ export function HogwartsLanding() {
         <TimelineSection />
         <LearnSection />
         <CountdownSection />
-        <TestimonialsSection />
         <Footer />
       </main>
     </>

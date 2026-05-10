@@ -44,7 +44,7 @@ export function Navbar() {
           className="flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold text-gold transition hover:bg-white/5"
         >
           <Sparkles className="h-4 w-4" />
-          <span className="font-display tracking-wide">Hogwarts</span>
+          <span className="font-display tracking-wide">hogwartz</span>
         </Link>
 
         {/* Desktop links */}
