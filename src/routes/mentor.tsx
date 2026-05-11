@@ -25,6 +25,7 @@ const FEATURED_MENTORS = [
     designation: "India Branch Director",
     linkedin: "https://www.linkedin.com/in/aarushi-chottani-80b861322",
     house: "Order of the First Owl",
+    photo: aarushiPhoto,
   },
 ];
 
