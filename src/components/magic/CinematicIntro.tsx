@@ -65,9 +65,6 @@ export function CinematicIntro({ onFinish }: { onFinish: () => void }) {
   }, [beat, videoReady]);
 
   const finish = () => {
-    try {
-      localStorage.setItem("hogwarts:intro:seen", "1");
-    } catch {}
     onFinish();
   };
 

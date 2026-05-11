@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ApplyForm } from "@/components/forms/ApplyForm";
+
 import { Starfield } from "@/components/magic/Starfield";
 import { CursorWand } from "@/components/magic/CursorWand";
 import { Navbar } from "@/components/landing/Navbar";
@@ -42,7 +42,25 @@ function ApplyPage() {
           </p>
         </div>
         <div className="mt-12">
-          <ApplyForm />
+          <div className="overflow-hidden rounded-2xl border border-[color:var(--gold)]/30 bg-background/40 shadow-[0_0_60px_-10px_oklch(0.72_0.22_45/0.35)] backdrop-blur">
+            <iframe
+              title="hogwartz application form"
+              src="https://airtable.com/embed/appHmtCuCXIoqbrxR/pagJgZmOZz55IVQ5n/form"
+              className="h-[860px] w-full"
+              style={{ background: "transparent", border: 0 }}
+            />
+          </div>
+          <p className="mt-3 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+            Trouble with the parchment?{" "}
+            <a
+              href="https://airtable.com/appHmtCuCXIoqbrxR/pagJgZmOZz55IVQ5n/form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold underline-offset-4 hover:underline"
+            >
+              Open in a new portal
+            </a>
+          </p>
         </div>
       </main>
       <Footer />
