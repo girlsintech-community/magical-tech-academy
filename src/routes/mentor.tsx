@@ -6,6 +6,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowLeft, Linkedin, Sparkles } from "lucide-react";
 import mentorBg from "@/assets/mentor-bg.webp";
+import aarushiPhoto from "@/assets/mentor-aarushi.jpg";
 
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
