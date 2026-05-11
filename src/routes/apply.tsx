@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ApplyForm } from "@/components/forms/ApplyForm";
+
 import { Starfield } from "@/components/magic/Starfield";
 import { CursorWand } from "@/components/magic/CursorWand";
 import { Navbar } from "@/components/landing/Navbar";
