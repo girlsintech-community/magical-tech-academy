@@ -18,11 +18,8 @@ export function HogwartsLanding() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    let seen = "0";
-    try {
-      seen = localStorage.getItem("hogwarts:intro:seen") ?? "0";
-    } catch {}
-    setShowIntro(seen !== "1");
+    // Always play the intro on every visit
+    setShowIntro(true);
     setReady(true);
   }, []);
 
