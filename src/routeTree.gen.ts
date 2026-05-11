@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PhotoboothRouteImport } from './routes/photobooth'
 import { Route as MentorRouteImport } from './routes/mentor'
 import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JourneyTokenRouteImport } from './routes/journey.$token'
 
+const PhotoboothRoute = PhotoboothRouteImport.update({
+  id: '/photobooth',
+  path: '/photobooth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MentorRoute = MentorRouteImport.update({
   id: '/mentor',
   path: '/mentor',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/apply': typeof ApplyRoute
   '/mentor': typeof MentorRoute
+  '/photobooth': typeof PhotoboothRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/apply': typeof ApplyRoute
   '/mentor': typeof MentorRoute
+  '/photobooth': typeof PhotoboothRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRoutesById {
@@ -52,25 +60,40 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/apply': typeof ApplyRoute
   '/mentor': typeof MentorRoute
+  '/photobooth': typeof PhotoboothRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/apply' | '/mentor' | '/journey/$token'
+  fullPaths: '/' | '/apply' | '/mentor' | '/photobooth' | '/journey/$token'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/apply' | '/mentor' | '/journey/$token'
-  id: '__root__' | '/' | '/apply' | '/mentor' | '/journey/$token'
+  to: '/' | '/apply' | '/mentor' | '/photobooth' | '/journey/$token'
+  id:
+    | '__root__'
+    | '/'
+    | '/apply'
+    | '/mentor'
+    | '/photobooth'
+    | '/journey/$token'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApplyRoute: typeof ApplyRoute
   MentorRoute: typeof MentorRoute
+  PhotoboothRoute: typeof PhotoboothRoute
   JourneyTokenRoute: typeof JourneyTokenRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/photobooth': {
+      id: '/photobooth'
+      path: '/photobooth'
+      fullPath: '/photobooth'
+      preLoaderRoute: typeof PhotoboothRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mentor': {
       id: '/mentor'
       path: '/mentor'
@@ -106,6 +129,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApplyRoute: ApplyRoute,
   MentorRoute: MentorRoute,
+  PhotoboothRoute: PhotoboothRoute,
   JourneyTokenRoute: JourneyTokenRoute,
 }
 export const routeTree = rootRouteImport

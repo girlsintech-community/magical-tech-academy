@@ -6,6 +6,7 @@ const NAV = [
   { to: "/#houses", label: "Houses" },
   { to: "/#journey", label: "Journey" },
   { to: "/#learn", label: "Learn" },
+  { to: "/photobooth", label: "Photo Booth" },
 ] as const;
 
 export function Navbar() {
