@@ -11,6 +11,7 @@ import { HousesSection } from "@/components/landing/HousesSection";
 import { TimelineSection } from "@/components/landing/TimelineSection";
 import { LearnSection } from "@/components/landing/LearnSection";
 import { CountdownSection } from "@/components/landing/CountdownSection";
+import { ScrollToTop } from "@/components/magic/ScrollToTop";
 
 export function HogwartsLanding() {
   const [showIntro, setShowIntro] = useState(false);
@@ -32,16 +33,17 @@ export function HogwartsLanding() {
       <Starfield />
       <CursorWand />
       <SoundToggle />
+      <ScrollToTop />
       {showIntro && <CinematicIntro onFinish={() => setShowIntro(false)} />}
       <Navbar />
 
       <main className="relative z-10">
         <Hero onReplayIntro={() => setShowIntro(true)} />
+        <CountdownSection />
         <StagesSection />
         <HousesSection />
         <TimelineSection />
         <LearnSection />
-        <CountdownSection />
         <Footer />
       </main>
     </>
