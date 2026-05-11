@@ -77,8 +77,13 @@ function MentorPage() {
                   ✦
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-[color:var(--gold)] to-[color:var(--ember)] font-display text-xl text-[color:var(--primary-foreground)]">
-                    {m.name.split(" ").map((n) => n[0]).join("")}
+                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-[color:var(--gold)]/60 shadow-[0_0_30px_-5px_oklch(0.72_0.22_45/0.6)]">
+                    <img
+                      src={m.photo}
+                      alt={m.name}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                   <div>
                     <h3 className="font-display text-lg text-gold">{m.name}</h3>
