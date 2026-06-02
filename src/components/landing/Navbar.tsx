@@ -75,7 +75,11 @@ export function Navbar() {
         <div className="ml-1 hidden items-center gap-1.5 md:flex">
           <Link
             to="/mentor"
-            className="rounded-full border border-[color:var(--gold)]/40 px-3.5 py-1.5 text-xs font-medium text-foreground transition hover:border-[color:var(--gold)] hover:text-gold"
+            className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition ${
+              loc.pathname === "/mentor"
+                ? "border-[color:var(--gold)] bg-[color:var(--gold)]/15 text-gold"
+                : "border-[color:var(--gold)]/40 text-foreground hover:border-[color:var(--gold)] hover:text-gold"
+            }`}
           >
             Mentor
           </Link>
