@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Sparkles, Wand2, RotateCcw, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { SeatCounter } from "./SeatCounter";
 import heroBg from "@/assets/hogwarts-hero.webp";
 
 export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
@@ -93,17 +92,11 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
             Replay intro
           </button>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.4 }}
-          className="mt-14 flex w-full justify-center"
-        >
-          <SeatCounter />
-        </motion.div>
-
       </div>
     </section>
   );
 }
+
+
+
+

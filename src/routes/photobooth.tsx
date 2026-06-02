@@ -115,8 +115,9 @@ function PhotoBoothPage() {
       ctx.rect(WINDOW.x, WINDOW.y, WINDOW.w, WINDOW.h);
       ctx.clip();
 
-      // Contain-fit so the FULL photo is visible inside the frame
-      const baseScale = Math.min(WINDOW.w / photo.width, WINDOW.h / photo.height);
+      // Cover-fit so the photo fully fills the frame window. Use the zoom
+      // slider (min 0.5) to scale down if you'd rather see the whole photo.
+      const baseScale = Math.max(WINDOW.w / photo.width, WINDOW.h / photo.height);
       const s = baseScale * photoScale;
       const drawW = photo.width * s;
       const drawH = photo.height * s;
