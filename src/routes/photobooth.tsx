@@ -22,7 +22,7 @@ import applyBg from "@/assets/apply-bg.webp";
 
 // Frame image is 1024×1024. The inner transparent window (in source pixels):
 const FRAME_SIZE = 1024;
-const WINDOW = { x: 188, y: 222, w: 672, h: 568 };
+const WINDOW = { x: 150, y: 215, w: 720, h: 540 };
 
 type Layer = "photo" | "hat";
 
