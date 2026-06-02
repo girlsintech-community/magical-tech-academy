@@ -92,6 +92,11 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
             Replay intro
           </button>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
 
 
 
