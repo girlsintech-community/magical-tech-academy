@@ -60,7 +60,7 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           style={{ textShadow: "0 2px 14px rgba(0,0,0,0.7)" }}
         >
           A 14 day journey where AI meets imagination. Free for 100 chosen students,
-          ages 8 to 18, across India. June 7 to June 21, 2026.
+          ages 8 to 18, across India. June 14 to June 28, 2026.
         </motion.p>
 
         <motion.div

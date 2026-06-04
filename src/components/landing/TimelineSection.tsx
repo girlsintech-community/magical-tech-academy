@@ -32,7 +32,7 @@ export function TimelineSection() {
       <SectionHeader
         eyebrow="Your 14 day journey"
         title="Two weeks that change how you see the world"
-        subtitle="June 7 to June 21, 2026 ~ Free for everyone admitted"
+        subtitle="June 14 to June 28, 2026 ~ Free for everyone admitted"
       />
 
       <div className="relative mt-14">
