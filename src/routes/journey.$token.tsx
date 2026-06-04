@@ -212,8 +212,8 @@ function AcceptanceLetter({ app }: { app: App }) {
         </p>
       )}
       <p className="mt-6 leading-relaxed">
-        Term begins on <strong>7 June 2026</strong> and concludes with our Demo Day on
-        <strong> 21 June 2026</strong>. Join your house, build something magical, and meet a hundred
+        Term begins on <strong>14 June 2026</strong> and concludes with our Demo Day on
+        <strong> 28 June 2026</strong>. Join your house, build something magical, and meet a hundred
         kindred souls.
       </p>
       <p className="font-display mt-8 text-2xl">— Girls Leading Tech</p>

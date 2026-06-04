@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { SectionHeader } from "./HousesSection";
 import countdownBg from "@/assets/countdown-hat-bg.webp";
 
-const TARGET = new Date("2026-06-07T09:00:00+05:30").getTime();
+const TARGET = new Date("2026-06-14T09:00:00+05:30").getTime();
 
 function diff() {
   const ms = Math.max(0, TARGET - Date.now());
@@ -47,7 +47,7 @@ export function CountdownSection() {
           ))}
         </div>
         <p className="mt-6 text-sm text-muted-foreground">
-          7 June 2026 ~ 9:00 AM IST ~ Demo Day on 21 June 2026
+          14 June 2026 ~ 9:00 AM IST ~ Demo Day on 28 June 2026
         </p>
       </div>
     </section>
