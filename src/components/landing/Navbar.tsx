@@ -79,7 +79,9 @@ export function Navbar() {
           {NAV.map((item) => {
             const [path, hash] = item.to.split("#");
             const isRoutePage = !hash;
-            const isActive = isRoutePage && loc.pathname === path;
+            const isActive = isRoutePage
+              ? loc.pathname === path
+              : loc.pathname === "/" && activeHash === hash;
             return (
               <a
                 key={item.to}
