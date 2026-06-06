@@ -4,6 +4,12 @@ import { SectionHeader } from "./HousesSection";
 import mishaPhoto from "@/assets/team-misha.jpg.asset.json";
 import sarahPhoto from "@/assets/team-sarah.jpg.asset.json";
 import manikPhoto from "@/assets/team-manik.png.asset.json";
+import raksaPhoto from "@/assets/team-raksa.png.asset.json";
+import vaishnaviPhoto from "@/assets/team-vaishnavi.png.asset.json";
+import abhijnaPhoto from "@/assets/team-abhijna.png.asset.json";
+import samikshaPhoto from "@/assets/team-samiksha.jpg.asset.json";
+import deekshaPhoto from "@/assets/team-deeksha.jpg.asset.json";
+import vijayPhoto from "@/assets/team-vijay.jpg.asset.json";
 
 type Member = {
   name: string;
@@ -44,6 +50,7 @@ const TEAM: Member[] = [
     name: "S. Raksa Ruba",
     title: "Host & Moderator ~ Herald of the Hall",
     city: "Chennai, Tamil Nadu",
+    photo: raksaPhoto.url,
     linkedin: "https://www.linkedin.com/in/raksarubas",
     instagram: "https://instagram.com/Rakza31",
     patronus: "Nightingale",
@@ -52,6 +59,7 @@ const TEAM: Member[] = [
     name: "Vaishnavi Desale",
     title: "Host & Moderator ~ Voice of the Veil",
     city: "Nashik, Maharashtra",
+    photo: vaishnaviPhoto.url,
     linkedin: "https://www.linkedin.com/in/vaishnavidesale27",
     instagram: "https://www.instagram.com/vaishnavi_gemini",
     patronus: "Doe",
@@ -60,6 +68,7 @@ const TEAM: Member[] = [
     name: "Abhijna Laxmi",
     title: "Host & Moderator ~ Keeper of Ceremonies",
     city: "Mangalore, Karnataka",
+    photo: abhijnaPhoto.url,
     linkedin: "https://www.linkedin.com/in/abhijna-laxmi-659143298",
     instagram: "https://www.instagram.com/the_fantasticmoon20",
     patronus: "Snowy Owl",
@@ -68,6 +77,7 @@ const TEAM: Member[] = [
     name: "Samiksha Patil",
     title: "Designer ~ Enchantress of Ink",
     city: "Ahilyanagar, Maharashtra",
+    photo: samikshaPhoto.url,
     linkedin: "https://www.linkedin.com/in/samiksha-patil-622879385/",
     instagram: "https://instagram.com/samiksha__024",
     patronus: "Unicorn",
@@ -76,6 +86,7 @@ const TEAM: Member[] = [
     name: "Deeksha G",
     title: "Content Writer ~ Scribe of Sparks",
     city: "Mangaluru, Karnataka",
+    photo: deekshaPhoto.url,
     linkedin: "https://linkedin.com/in/deeksha-g-cybersec",
     instagram: "https://www.instagram.com/_dksha_bangera_",
     patronus: "Raven",
@@ -84,6 +95,7 @@ const TEAM: Member[] = [
     name: "Vijay Laxmi",
     title: "Apprentice of the Order",
     city: "Delhi",
+    photo: vijayPhoto.url,
     linkedin: "https://www.linkedin.com/in/laxmi-vijay/",
     instagram: "https://www.instagram.com/_vijay.laxmi__",
     patronus: "Falcon",
