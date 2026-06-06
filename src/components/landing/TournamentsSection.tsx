@@ -134,33 +134,45 @@ export function TournamentsSection() {
                     >
                       <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-[color:var(--gold)]/10 to-transparent blur-2xl`} />
 
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <h3 className="font-display text-2xl text-gold sm:text-3xl">
-                            {t.name}
-                          </h3>
-                          <p className="mt-1 text-[11px] uppercase tracking-[0.25em] text-foreground/55">
-                            aka {t.realName}
+                      <div className="relative">
+                        {/* blurred layer */}
+                        <div className="select-none blur-[5px]">
+                          <div className="flex items-start justify-between gap-4">
+                            <div>
+                              <h3 className="font-display text-2xl text-gold sm:text-3xl">
+                                {t.name}
+                              </h3>
+                              <p className="mt-1 text-[11px] uppercase tracking-[0.25em] text-foreground/55">
+                                aka {t.realName}
+                              </p>
+                            </div>
+                            <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-full bg-background/60 ring-2 ${meta.ring}`}>
+                              <Trophy className="h-5 w-5 text-gold" />
+                            </div>
+                          </div>
+
+                          <p className="mt-4 text-sm leading-relaxed text-foreground/80">
+                            {t.description}
                           </p>
-                        </div>
-                        <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-full bg-background/60 ring-2 ${meta.ring}`}>
-                          <Trophy className="h-5 w-5 text-gold" />
-                        </div>
-                      </div>
 
-                      <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                        {t.description}
-                      </p>
+                          <div className="mt-5 flex flex-wrap items-center gap-3 text-xs">
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/25 bg-background/40 px-3 py-1 text-foreground/75">
+                              <Hourglass className="h-3 w-3 text-gold" /> {t.date}
+                            </span>
+                            {t.prize && (
+                              <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/25 bg-background/40 px-3 py-1 text-foreground/75">
+                                <Trophy className="h-3 w-3 text-gold" /> {t.prize}
+                              </span>
+                            )}
+                          </div>
+                        </div>
 
-                      <div className="mt-5 flex flex-wrap items-center gap-3 text-xs">
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/25 bg-background/40 px-3 py-1 text-foreground/75">
-                          <Hourglass className="h-3 w-3 text-gold" /> {t.date}
-                        </span>
-                        {t.prize && (
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/25 bg-background/40 px-3 py-1 text-foreground/75">
-                            <Trophy className="h-3 w-3 text-gold" /> {t.prize}
+                        {/* Coming Soon overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="rounded-full border border-[color:var(--gold)]/40 bg-background/80 px-5 py-2.5 text-sm font-medium uppercase tracking-widest text-gold backdrop-blur-sm shadow-lg">
+                            Coming Soon
                           </span>
-                        )}
+                        </div>
                       </div>
                     </motion.article>
                   ))}
