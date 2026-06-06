@@ -4,6 +4,12 @@ import { SectionHeader } from "./HousesSection";
 import mishaPhoto from "@/assets/team-misha.jpg.asset.json";
 import sarahPhoto from "@/assets/team-sarah.jpg.asset.json";
 import manikPhoto from "@/assets/team-manik.png.asset.json";
+import raksaPhoto from "@/assets/team-raksa.png.asset.json";
+import vaishnaviPhoto from "@/assets/team-vaishnavi.png.asset.json";
+import abhijnaPhoto from "@/assets/team-abhijna.png.asset.json";
+import samikshaPhoto from "@/assets/team-samiksha.jpg.asset.json";
+import deekshaPhoto from "@/assets/team-deeksha.jpg.asset.json";
+import vijayPhoto from "@/assets/team-vijay.jpg.asset.json";
 
 type Member = {
   name: string;
