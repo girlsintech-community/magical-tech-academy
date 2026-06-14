@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { Linkedin, Globe, MapPin, Sparkles, Instagram } from "lucide-react";
 import { SectionHeader } from "./HousesSection";
-import mishaPhoto from "@/assets/team-misha.jpg.asset.json";
-import sarahPhoto from "@/assets/team-sarah.jpg.asset.json";
+import mishaPhoto from "@/assets/team-misha-2026.jpg.asset.json";
+import sarahPhoto from "@/assets/team-sarah-2026.jpg.asset.json";
 import manikPhoto from "@/assets/team-manik.png.asset.json";
-import raksaPhoto from "@/assets/team-raksa.png.asset.json";
-import vaishnaviPhoto from "@/assets/team-vaishnavi.png.asset.json";
-import abhijnaPhoto from "@/assets/team-abhijna.png.asset.json";
-import samikshaPhoto from "@/assets/team-samiksha.jpg.asset.json";
-import deekshaPhoto from "@/assets/team-deeksha.jpg.asset.json";
-import vijayPhoto from "@/assets/team-vijay.jpg.asset.json";
+import raksaPhoto from "@/assets/team-raksa-2026.png.asset.json";
+import vaishnaviPhoto from "@/assets/team-vaishnavi-2026.png.asset.json";
+import abhijnaPhoto from "@/assets/team-abhijna-2026.png.asset.json";
+import samikshaPhoto from "@/assets/team-samiksha-2026.jpg.asset.json";
+import deekshaPhoto from "@/assets/team-deeksha-2026.jpg.asset.json";
+import vijayPhoto from "@/assets/team-vijay-2026.jpg.asset.json";
 
 type Member = {
   name: string;

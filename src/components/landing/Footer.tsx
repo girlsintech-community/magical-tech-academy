@@ -75,7 +75,7 @@ export function Footer() {
           <div>
             <p className="text-[10px] uppercase tracking-[0.3em] text-gold">Join the magic</p>
             <ul className="mt-4 space-y-2 text-sm text-foreground/75">
-              <li><Link to="/apply" className="hover:text-gold">Apply as a student</Link></li>
+              <li><Link to="/apply" className="hover:text-gold">Student applications</Link></li>
               <li><Link to="/mentor" className="hover:text-gold">Become a mentor</Link></li>
               <li><a href="mailto:girlsleadingtech@gmail.com?subject=Partner with hogwartz" className="hover:text-gold">Partner with us</a></li>
             </ul>

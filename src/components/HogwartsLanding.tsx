@@ -10,9 +10,9 @@ import { StagesSection } from "@/components/landing/StagesSection";
 import { HousesSection } from "@/components/landing/HousesSection";
 import { TimelineSection } from "@/components/landing/TimelineSection";
 import { LearnSection } from "@/components/landing/LearnSection";
-import { CountdownSection } from "@/components/landing/CountdownSection";
 import { TeamSection } from "@/components/landing/TeamSection";
 import { TournamentsSection } from "@/components/landing/TournamentsSection";
+import { FaqSection } from "@/components/landing/FaqSection";
 import { ScrollToTop } from "@/components/magic/ScrollToTop";
 
 export function HogwartsLanding() {
@@ -38,13 +38,13 @@ export function HogwartsLanding() {
 
       <main className="relative z-10">
         <Hero onReplayIntro={() => setShowIntro(true)} />
-        <CountdownSection />
         <StagesSection />
         <HousesSection />
         <TimelineSection />
         <LearnSection />
         <TournamentsSection />
         <TeamSection />
+        <FaqSection />
         <Footer />
       </main>
     </>
