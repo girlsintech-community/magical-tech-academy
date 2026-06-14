@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, Wand2, RotateCcw, ArrowRight } from "lucide-react";
+import { Wand2, RotateCcw } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import heroBg from "@/assets/hogwarts-hero.webp";
 
@@ -69,14 +69,6 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           transition={{ duration: 0.9, delay: 1.1 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
-          <Link
-            to="/apply"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[color:var(--gold)] to-[color:var(--ember)] px-7 py-3.5 text-sm font-semibold text-[color:var(--primary-foreground)] shadow-[var(--shadow-glow)] transition hover:scale-105 hover:shadow-[var(--shadow-ember)]"
-          >
-            <Sparkles className="h-4 w-4" />
-            Apply now
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
           <Link
             to="/mentor"
             className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/40 bg-background/40 px-6 py-3.5 text-sm text-foreground backdrop-blur transition hover:border-[color:var(--gold)] hover:bg-background/60"

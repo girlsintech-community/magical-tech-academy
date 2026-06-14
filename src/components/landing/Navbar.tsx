@@ -111,12 +111,6 @@ export function Navbar() {
           >
             Mentor
           </Link>
-          <Link
-            to="/apply"
-            className="rounded-full bg-gradient-to-r from-[color:var(--gold)] to-[color:var(--ember)] px-4 py-1.5 text-xs font-semibold text-[color:var(--primary-foreground)] shadow-[var(--shadow-glow)] transition hover:scale-[1.04]"
-          >
-            Apply
-          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -145,13 +139,6 @@ export function Navbar() {
             ))}
             <Link to="/mentor" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-white/5">
               Become a mentor
-            </Link>
-            <Link
-              to="/apply"
-              onClick={() => setOpen(false)}
-              className="mt-1 rounded-lg bg-gradient-to-r from-[color:var(--gold)] to-[color:var(--ember)] px-3 py-2 text-center text-sm font-semibold text-[color:var(--primary-foreground)]"
-            >
-              Apply now
             </Link>
           </div>
         </div>
