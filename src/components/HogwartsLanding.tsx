@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CinematicIntro } from "@/components/magic/CinematicIntro";
 import { Starfield } from "@/components/magic/Starfield";
 import { CursorWand } from "@/components/magic/CursorWand";
@@ -13,19 +13,12 @@ import { LearnSection } from "@/components/landing/LearnSection";
 import { TeamSection } from "@/components/landing/TeamSection";
 import { TournamentsSection } from "@/components/landing/TournamentsSection";
 import { FaqSection } from "@/components/landing/FaqSection";
+import { ImpactSection } from "@/components/landing/ImpactSection";
+import { ScholarsSection } from "@/components/landing/ScholarsSection";
 import { ScrollToTop } from "@/components/magic/ScrollToTop";
 
 export function HogwartsLanding() {
   const [showIntro, setShowIntro] = useState(false);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    // Always play the intro on every visit
-    setShowIntro(true);
-    setReady(true);
-  }, []);
-
-  if (!ready) return null;
 
   return (
     <>
@@ -38,10 +31,12 @@ export function HogwartsLanding() {
 
       <main className="relative z-10">
         <Hero onReplayIntro={() => setShowIntro(true)} />
+        <ImpactSection />
         <StagesSection />
         <HousesSection />
         <TimelineSection />
         <LearnSection />
+        <ScholarsSection />
         <TournamentsSection />
         <TeamSection />
         <FaqSection />

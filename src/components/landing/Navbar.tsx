@@ -5,6 +5,7 @@ import { Sparkles, Menu, X } from "lucide-react";
 const NAV = [
   { to: "/#houses", label: "Houses" },
   { to: "/#journey", label: "Journey" },
+  { to: "/#scholars", label: "Scholars" },
   { to: "/#tournaments", label: "Tournaments" },
   { to: "/#team", label: "Team" },
   { to: "/photobooth", label: "Photo Booth" },
