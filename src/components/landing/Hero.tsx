@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wand2, RotateCcw } from "lucide-react";
+import { Wand2, PlayCircle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import heroBg from "@/assets/hogwarts-hero.webp";
 
