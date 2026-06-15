@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CinematicIntro } from "@/components/magic/CinematicIntro";
 import { Starfield } from "@/components/magic/Starfield";
 import { CursorWand } from "@/components/magic/CursorWand";
