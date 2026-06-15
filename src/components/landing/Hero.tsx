@@ -78,10 +78,10 @@ export function Hero({ onReplayIntro }: { onReplayIntro: () => void }) {
           </Link>
           <button
             onClick={onReplayIntro}
-            className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-xs text-foreground/70 transition hover:text-gold"
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/40 bg-background/40 px-6 py-3.5 text-sm text-foreground backdrop-blur transition hover:border-[color:var(--gold)] hover:bg-background/60"
           >
-            <RotateCcw className="h-3.5 w-3.5" />
-            Replay intro
+            <PlayCircle className="h-4 w-4" />
+            Watch the intro
           </button>
         </motion.div>
       </div>
