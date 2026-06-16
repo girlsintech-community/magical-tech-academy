@@ -8,6 +8,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, Linkedin, Sparkles } from "lucide-react";
 import mentorBg from "@/assets/mentor-bg.webp";
 import aarushiPhoto from "@/assets/mentor-aarushi.jpg";
+import rashmiPhoto from "@/assets/mentor-rashmi.jpg";
+import shilpiPhoto from "@/assets/mentor-shilpi.png";
+import anjaliPhoto from "@/assets/mentor-anjali.png";
+import manishkaPhoto from "@/assets/mentor-manishka.jpg";
 
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
@@ -28,7 +32,40 @@ const FEATURED_MENTORS = [
     house: "Order of the First Owl",
     photo: aarushiPhoto,
   },
+  {
+    name: "Rashmi Malapur Jaswal",
+    company: "Research Eye",
+    designation: "Founder",
+    linkedin: "https://www.linkedin.com/in/rashmi-jaswal-93a25015/",
+    house: "Circle of Founders",
+    photo: rashmiPhoto,
+  },
+  {
+    name: "Shilpi Mitra",
+    company: "Microsoft India",
+    designation: "Principal Software Engineering Manager",
+    linkedin: "https://www.linkedin.com/in/shilpimitra/",
+    house: "Architects of the Arcane",
+    photo: shilpiPhoto,
+  },
+  {
+    name: "Anjali Rout",
+    company: "Greater Noida Institute of Technology",
+    designation: "AI Researcher & Tech Entrepreneur",
+    linkedin: "https://www.linkedin.com/in/anjali-rout-117752357",
+    house: "Order of the Algorithm",
+    photo: anjaliPhoto,
+  },
+  {
+    name: "Manishka Dubey",
+    company: "Tinker Techie",
+    designation: "Founder",
+    linkedin: "https://www.linkedin.com/in/manishka-dubey-871a65202",
+    house: "Circle of Makers",
+    photo: manishkaPhoto,
+  },
 ];
+
 
 function MentorPage() {
   return (
