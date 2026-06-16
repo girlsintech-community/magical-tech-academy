@@ -8,6 +8,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, Linkedin, Sparkles } from "lucide-react";
 import mentorBg from "@/assets/mentor-bg.webp";
 import aarushiPhoto from "@/assets/mentor-aarushi.jpg";
+import rashmiPhoto from "@/assets/mentor-rashmi.jpg";
+import shilpiPhoto from "@/assets/mentor-shilpi.png";
+import anjaliPhoto from "@/assets/mentor-anjali.png";
+import manishkaPhoto from "@/assets/mentor-manishka.jpg";
 
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
@@ -28,7 +32,40 @@ const FEATURED_MENTORS = [
     house: "Order of the First Owl",
     photo: aarushiPhoto,
   },
+  {
+    name: "Rashmi Malapur Jaswal",
+    company: "Research Eye",
+    designation: "Founder",
+    linkedin: "https://www.linkedin.com/in/rashmi-jaswal-93a25015/",
+    house: "Circle of Founders",
+    photo: rashmiPhoto,
+  },
+  {
+    name: "Shilpi Mitra",
+    company: "Microsoft India",
+    designation: "Principal Software Engineering Manager",
+    linkedin: "https://www.linkedin.com/in/shilpimitra/",
+    house: "Architects of the Arcane",
+    photo: shilpiPhoto,
+  },
+  {
+    name: "Anjali Rout",
+    company: "Greater Noida Institute of Technology",
+    designation: "AI Researcher & Tech Entrepreneur",
+    linkedin: "https://www.linkedin.com/in/anjali-rout-117752357",
+    house: "Order of the Algorithm",
+    photo: anjaliPhoto,
+  },
+  {
+    name: "Manishka Dubey",
+    company: "Tinker Techie",
+    designation: "Founder",
+    linkedin: "https://www.linkedin.com/in/manishka-dubey-871a65202",
+    house: "Circle of Makers",
+    photo: manishkaPhoto,
+  },
 ];
+
 
 function MentorPage() {
   return (
@@ -60,40 +97,41 @@ function MentorPage() {
         <section className="mt-16">
           <div className="text-center">
             <p className="text-[10px] uppercase tracking-[0.4em] text-gold">The Hall of Mentors</p>
-            <h2 className="font-display mt-2 text-2xl sm:text-3xl">Our first sworn-in guide</h2>
+            <h2 className="font-display mt-2 text-2xl sm:text-3xl">Our sworn-in guides</h2>
             <p className="mx-auto mt-2 max-w-md text-xs text-muted-foreground">
               The Sorting Hat has spoken. More mentors shall be revealed as the moon turns.
             </p>
           </div>
-          <div className="mx-auto mt-10 max-w-3xl">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {FEATURED_MENTORS.map((m) => (
               <a
                 key={m.name}
                 href={m.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="magic-card group relative grid overflow-hidden rounded-3xl md:grid-cols-[minmax(0,1.25fr)_minmax(260px,0.75fr)]"
+                className="magic-card group relative flex flex-col overflow-hidden rounded-3xl"
               >
                 <div className="absolute -right-6 -top-6 text-6xl opacity-10 transition group-hover:opacity-30">
                   ✦
                 </div>
-                <div className="relative min-h-80 overflow-hidden md:min-h-[30rem]">
-                    <img
-                      src={m.photo}
-                      alt={m.name}
-                      className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.03]"
-                      loading="lazy"
-                    />
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <img
+                    src={m.photo}
+                    alt={m.name}
+                    className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
                 </div>
-                <div className="flex flex-col justify-end p-8 md:p-10">
+                <div className="flex flex-col gap-2 p-6 md:p-7">
                   <p className="text-[10px] uppercase tracking-[0.4em] text-gold">Featured guide</p>
-                  <h3 className="font-display mt-3 text-3xl text-gold sm:text-4xl">{m.name}</h3>
-                  <p className="mt-3 text-sm text-foreground/80">{m.designation}</p>
+                  <h3 className="font-display text-2xl text-gold sm:text-3xl">{m.name}</h3>
+                  <p className="text-sm text-foreground/80">{m.designation}</p>
                   <p className="text-sm text-muted-foreground">{m.company}</p>
-                  <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.3em] text-foreground/60">
+                  <span className="mt-1 inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.3em] text-foreground/60">
                     <Sparkles className="h-3 w-3" /> {m.house}
                   </span>
-                  <span className="mt-8 inline-flex items-center gap-1 text-sm text-gold transition group-hover:translate-x-0.5">
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm text-gold transition group-hover:translate-x-0.5">
                     <Linkedin className="h-3.5 w-3.5" /> View scroll
                   </span>
                 </div>
@@ -101,6 +139,7 @@ function MentorPage() {
             ))}
           </div>
         </section>
+
 
         {/* External mentor application */}
         <section className="mt-20">

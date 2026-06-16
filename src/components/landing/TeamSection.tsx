@@ -2,17 +2,19 @@ import { motion } from "framer-motion";
 import { Linkedin, Globe, MapPin, Sparkles, Instagram } from "lucide-react";
 import { SectionHeader } from "./HousesSection";
 
+// Served from /public/team — works on every host (Lovable preview AND Vercel).
 const TEAM_PHOTOS = {
-  misha: "/__l5e/assets-v1/531d62cf-3a37-41f0-9cd8-b7b169fa0a9e/team-misha-2026.jpg",
-  sarah: "/__l5e/assets-v1/2aa4af1a-01bd-43d6-8064-2082ed742adf/team-sarah-2026.jpg",
-  manik: "/__l5e/assets-v1/73aca587-3987-4702-9b41-e2541aa9b976/team-manik.png",
-  raksa: "/__l5e/assets-v1/ec9d63ca-7c70-4039-a06c-40e17ef5acec/team-raksa-2026.png",
-  vaishnavi: "/__l5e/assets-v1/36424c94-8052-4c5c-adcb-afdaa4ac6589/team-vaishnavi-2026.png",
-  abhijna: "/__l5e/assets-v1/18059ee0-a7ae-4d5f-a95b-db840f156919/team-abhijna-2026.png",
-  samiksha: "/__l5e/assets-v1/c4fc7d28-9ba9-4d87-8fa8-790e1ea69e68/team-samiksha-2026.jpg",
-  deeksha: "/__l5e/assets-v1/164110fe-1cea-409c-8409-144a9dc49609/team-deeksha-2026.jpg",
-  vijay: "/__l5e/assets-v1/5814afac-22c1-4b06-9cd1-3aa71e5880c8/team-vijay-2026.jpg",
+  misha: "/team/team-misha-2026.jpg",
+  sarah: "/team/team-sarah-2026.jpg",
+  manik: "/team/team-manik.png",
+  raksa: "/team/team-raksa-2026.png",
+  vaishnavi: "/team/team-vaishnavi-2026.png",
+  abhijna: "/team/team-abhijna-2026.png",
+  samiksha: "/team/team-samiksha-2026.jpg",
+  deeksha: "/team/team-deeksha-2026.jpg",
+  vijay: "/team/team-vijay-2026.jpg",
 } as const;
+
 
 type Member = {
   name: string;
