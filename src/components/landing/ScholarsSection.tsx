@@ -38,9 +38,32 @@ const project = (lat: number, lng: number) => ({
   y: ((LAT_MAX - lat) / (LAT_MAX - LAT_MIN)) * VB_H,
 });
 
-// Stylised India outline (approximate, hand-tuned for atmosphere, not cartography)
-const INDIA_PATH =
-  "M 175 70 L 230 60 L 290 70 L 340 90 L 380 120 L 415 165 L 430 215 L 425 255 L 405 285 L 380 305 L 360 320 L 345 345 L 335 375 L 325 405 L 315 440 L 300 475 L 280 510 L 260 525 L 245 500 L 235 465 L 225 430 L 215 395 L 200 360 L 180 325 L 165 290 L 150 255 L 138 220 L 130 185 L 128 150 L 140 110 L 155 85 Z";
+// India outline traced from lat/lng waypoints and projected with the same
+// transform as the city markers, so coastline and dots align.
+const INDIA_OUTLINE: Array<[number, number]> = [
+  // North (Kashmir)
+  [35.5, 77.0], [34.6, 75.8], [33.2, 74.3], [32.3, 74.5],
+  // West border (Punjab → Rajasthan → Gujarat)
+  [30.4, 74.2], [28.5, 72.0], [26.0, 70.2], [24.3, 68.7],
+  // Gujarat / Kutch
+  [23.0, 68.4], [22.3, 69.7], [21.0, 72.6], [20.0, 72.8],
+  // West coast (Mumbai → Goa → Mangalore → Kerala → Kanyakumari)
+  [18.9, 72.8], [15.5, 73.8], [12.9, 74.8], [10.0, 76.2],
+  [8.5, 76.9], [8.08, 77.55],
+  // East coast (TN → AP → Odisha → WB)
+  [9.3, 79.3], [11.0, 79.8], [13.1, 80.3], [15.5, 80.2],
+  [17.7, 83.3], [19.3, 84.8], [20.3, 86.6], [21.6, 87.5], [21.9, 88.2],
+  // North-east arc (Bengal → Assam → Arunachal)
+  [23.5, 88.7], [25.0, 89.8], [26.0, 90.5], [26.7, 92.8],
+  [27.5, 95.4], [28.5, 96.6], [28.2, 94.5], [27.9, 91.6],
+  // Bhutan / Sikkim / Nepal border (north edge)
+  [27.5, 88.9], [27.0, 86.5], [28.6, 83.5], [29.4, 81.0],
+  [30.2, 80.2], [31.0, 79.1], [32.5, 78.6], [33.8, 78.9],
+  [34.5, 78.0], [35.4, 77.5],
+];
+
+// Kept here in case future cards want a coarse path string; outline now uses points.
+
 
 export function ScholarsSection() {
   const maxCount = Math.max(...LOCATIONS.map((l) => l.count));
