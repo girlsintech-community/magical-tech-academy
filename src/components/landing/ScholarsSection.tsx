@@ -127,14 +127,22 @@ export function ScholarsSection() {
                 return <circle key={i} cx={x} cy={y} r="0.6" fill="white" opacity="0.18" />;
               })}
 
-              {/* India outline */}
+              {/* India outline (projected from lat/lng waypoints) */}
               <path
-                d={INDIA_PATH}
+                d={
+                  "M " +
+                  INDIA_OUTLINE.map(([lat, lng]) => {
+                    const p = project(lat, lng);
+                    return `${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+                  }).join(" L ") +
+                  " Z"
+                }
                 fill="rgba(255,180,80,0.06)"
-                stroke="rgba(255,180,80,0.45)"
+                stroke="rgba(255,180,80,0.55)"
                 strokeWidth="1.2"
                 strokeLinejoin="round"
               />
+
 
               {/* Constellation lines connecting major hubs */}
               {LOCATIONS.slice(0, 5).map((a, i) => {
