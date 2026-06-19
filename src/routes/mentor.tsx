@@ -12,6 +12,8 @@ import rashmiPhoto from "@/assets/mentor-rashmi.jpg";
 import shilpiPhoto from "@/assets/mentor-shilpi.png";
 import anjaliPhoto from "@/assets/mentor-anjali.png";
 import manishkaPhoto from "@/assets/mentor-manishka.jpg";
+import minalPhoto from "@/assets/mentor-minal.jpg";
+import avyanaPhoto from "@/assets/mentor-avyana.jpg";
 
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
@@ -50,8 +52,8 @@ const FEATURED_MENTORS = [
   },
   {
     name: "Anjali Rout",
-    company: "Greater Noida Institute of Technology",
-    designation: "AI Researcher & Tech Entrepreneur",
+    company: "Venture Bots · Mentroid · FlyRank",
+    designation: "Founder @ Venture Bots | AI Management Lead @ Mentroid | ML Intern @ FlyRank",
     linkedin: "https://www.linkedin.com/in/anjali-rout-117752357",
     house: "Order of the Algorithm",
     photo: anjaliPhoto,
@@ -63,6 +65,22 @@ const FEATURED_MENTORS = [
     linkedin: "https://www.linkedin.com/in/manishka-dubey-871a65202",
     house: "Circle of Makers",
     photo: manishkaPhoto,
+  },
+  {
+    name: "Minal Dalal",
+    company: "",
+    designation: "Mentor",
+    linkedin: "",
+    house: "Council of Elders",
+    photo: minalPhoto,
+  },
+  {
+    name: "Avyana Mehta",
+    company: "Plastic2Build",
+    designation: "Founder @ Plastic2Build",
+    linkedin: "",
+    house: "Circle of Founders",
+    photo: avyanaPhoto,
   },
 ];
 
@@ -103,40 +121,46 @@ function MentorPage() {
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {FEATURED_MENTORS.map((m) => (
-              <a
-                key={m.name}
-                href={m.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="magic-card group relative flex flex-col overflow-hidden rounded-3xl"
-              >
-                <div className="absolute -right-6 -top-6 text-6xl opacity-10 transition group-hover:opacity-30">
-                  ✦
-                </div>
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
-                  <img
-                    src={m.photo}
-                    alt={m.name}
-                    className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
-                </div>
-                <div className="flex flex-col gap-2 p-6 md:p-7">
-                  <p className="text-[10px] uppercase tracking-[0.4em] text-gold">Featured guide</p>
-                  <h3 className="font-display text-2xl text-gold sm:text-3xl">{m.name}</h3>
-                  <p className="text-sm text-foreground/80">{m.designation}</p>
-                  <p className="text-sm text-muted-foreground">{m.company}</p>
-                  <span className="mt-1 inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.3em] text-foreground/60">
-                    <Sparkles className="h-3 w-3" /> {m.house}
-                  </span>
-                  <span className="mt-3 inline-flex items-center gap-1 text-sm text-gold transition group-hover:translate-x-0.5">
-                    <Linkedin className="h-3.5 w-3.5" /> View scroll
-                  </span>
-                </div>
-              </a>
-            ))}
+            {FEATURED_MENTORS.map((m) => {
+              const Tag: any = m.linkedin ? "a" : "div";
+              const linkProps = m.linkedin
+                ? { href: m.linkedin, target: "_blank", rel: "noopener noreferrer" }
+                : {};
+              return (
+                <Tag
+                  key={m.name}
+                  {...linkProps}
+                  className="magic-card group relative flex flex-col overflow-hidden rounded-3xl"
+                >
+                  <div className="absolute -right-6 -top-6 text-6xl opacity-10 transition group-hover:opacity-30">
+                    ✦
+                  </div>
+                  <div className="relative aspect-[4/5] w-full overflow-hidden">
+                    <img
+                      src={m.photo}
+                      alt={m.name}
+                      className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
+                  </div>
+                  <div className="flex flex-col gap-2 p-6 md:p-7">
+                    <p className="text-[10px] uppercase tracking-[0.4em] text-gold">Featured guide</p>
+                    <h3 className="font-display text-2xl text-gold sm:text-3xl">{m.name}</h3>
+                    <p className="text-sm text-foreground/80">{m.designation}</p>
+                    {m.company && <p className="text-sm text-muted-foreground">{m.company}</p>}
+                    <span className="mt-1 inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.3em] text-foreground/60">
+                      <Sparkles className="h-3 w-3" /> {m.house}
+                    </span>
+                    {m.linkedin && (
+                      <span className="mt-3 inline-flex items-center gap-1 text-sm text-gold transition group-hover:translate-x-0.5">
+                        <Linkedin className="h-3.5 w-3.5" /> View scroll
+                      </span>
+                    )}
+                  </div>
+                </Tag>
+              );
+            })}
           </div>
         </section>
 
