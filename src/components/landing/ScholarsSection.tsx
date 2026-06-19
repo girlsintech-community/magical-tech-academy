@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Globe2 } from "lucide-react";
 import { SectionHeader } from "./HousesSection";
+import { Globe } from "./Globe";
 
 // Approximate latitude/longitude for each location
 const LOCATIONS = [
@@ -21,48 +22,12 @@ const LOCATIONS = [
 ];
 
 const INTERNATIONAL = [
-  { name: "United States", count: 2 },
-  { name: "United Arab Emirates", count: 1 },
-  { name: "Kosovo", count: 1 },
+  { name: "United States", count: 2, lat: 38.9, lng: -77.0 },
+  { name: "United Arab Emirates", count: 1, lat: 24.4, lng: 54.4 },
+  { name: "Kosovo", count: 1, lat: 42.6, lng: 21.0 },
 ];
 
-// Projection from lat/lng → SVG x/y inside 500x560 viewBox
-const VB_W = 500;
-const VB_H = 560;
-const LNG_MIN = 67;
-const LNG_MAX = 98;
-const LAT_MIN = 6;
-const LAT_MAX = 37;
-const project = (lat: number, lng: number) => ({
-  x: ((lng - LNG_MIN) / (LNG_MAX - LNG_MIN)) * VB_W,
-  y: ((LAT_MAX - lat) / (LAT_MAX - LAT_MIN)) * VB_H,
-});
 
-// India outline traced from lat/lng waypoints and projected with the same
-// transform as the city markers, so coastline and dots align.
-const INDIA_OUTLINE: Array<[number, number]> = [
-  // North (Kashmir)
-  [35.5, 77.0], [34.6, 75.8], [33.2, 74.3], [32.3, 74.5],
-  // West border (Punjab → Rajasthan → Gujarat)
-  [30.4, 74.2], [28.5, 72.0], [26.0, 70.2], [24.3, 68.7],
-  // Gujarat / Kutch
-  [23.0, 68.4], [22.3, 69.7], [21.0, 72.6], [20.0, 72.8],
-  // West coast (Mumbai → Goa → Mangalore → Kerala → Kanyakumari)
-  [18.9, 72.8], [15.5, 73.8], [12.9, 74.8], [10.0, 76.2],
-  [8.5, 76.9], [8.08, 77.55],
-  // East coast (TN → AP → Odisha → WB)
-  [9.3, 79.3], [11.0, 79.8], [13.1, 80.3], [15.5, 80.2],
-  [17.7, 83.3], [19.3, 84.8], [20.3, 86.6], [21.6, 87.5], [21.9, 88.2],
-  // North-east arc (Bengal → Assam → Arunachal)
-  [23.5, 88.7], [25.0, 89.8], [26.0, 90.5], [26.7, 92.8],
-  [27.5, 95.4], [28.5, 96.6], [28.2, 94.5], [27.9, 91.6],
-  // Bhutan / Sikkim / Nepal border (north edge)
-  [27.5, 88.9], [27.0, 86.5], [28.6, 83.5], [29.4, 81.0],
-  [30.2, 80.2], [31.0, 79.1], [32.5, 78.6], [33.8, 78.9],
-  [34.5, 78.0], [35.4, 77.5],
-];
-
-// Kept here in case future cards want a coarse path string; outline now uses points.
 
 
 export function ScholarsSection() {
@@ -103,106 +68,29 @@ export function ScholarsSection() {
                 Map of the Realm
               </div>
               <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                {totalIndia} scholars · India
+                {totalIndia + totalIntl} scholars worldwide
               </p>
             </div>
 
-            <svg
-              viewBox={`0 0 ${VB_W} ${VB_H}`}
-              className="h-auto w-full"
-              role="img"
-              aria-label="Map of India showing where Hogwartz scholars come from"
-            >
-              <defs>
-                <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="var(--gold)" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="var(--gold)" stopOpacity="0" />
-                </radialGradient>
-              </defs>
-
-              {/* Subtle starfield */}
-              {Array.from({ length: 40 }).map((_, i) => {
-                const x = (i * 137) % VB_W;
-                const y = (i * 71) % VB_H;
-                return <circle key={i} cx={x} cy={y} r="0.6" fill="white" opacity="0.18" />;
-              })}
-
-              {/* India outline (projected from lat/lng waypoints) */}
-              <path
-                d={
-                  "M " +
-                  INDIA_OUTLINE.map(([lat, lng]) => {
-                    const p = project(lat, lng);
-                    return `${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
-                  }).join(" L ") +
-                  " Z"
-                }
-                fill="rgba(255,180,80,0.06)"
-                stroke="rgba(255,180,80,0.55)"
-                strokeWidth="1.2"
-                strokeLinejoin="round"
-              />
-
-
-              {/* Constellation lines connecting major hubs */}
-              {LOCATIONS.slice(0, 5).map((a, i) => {
-                const b = LOCATIONS[(i + 1) % 5];
-                const pa = project(a.lat, a.lng);
-                const pb = project(b.lat, b.lng);
-                return (
-                  <line
-                    key={`l-${i}`}
-                    x1={pa.x}
-                    y1={pa.y}
-                    x2={pb.x}
-                    y2={pb.y}
-                    stroke="var(--gold)"
-                    strokeOpacity="0.18"
-                    strokeDasharray="2 4"
-                  />
-                );
-              })}
-
-              {/* Markers */}
-              {LOCATIONS.map((loc) => {
-                const { x, y } = project(loc.lat, loc.lng);
-                const r = 4 + (loc.count / maxCount) * 10;
-                return (
-                  <g key={loc.name}>
-                    <circle cx={x} cy={y} r={r * 2.4} fill="url(#dotGlow)" />
-                    <motion.circle
-                      cx={x}
-                      cy={y}
-                      r={r}
-                      fill="var(--gold)"
-                      fillOpacity="0.85"
-                      stroke="white"
-                      strokeOpacity="0.9"
-                      strokeWidth="1"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.05 * loc.count }}
-                      style={{ transformOrigin: `${x}px ${y}px` }}
-                    />
-                    <text
-                      x={x + r + 4}
-                      y={y + 3}
-                      fontSize="9"
-                      fill="rgba(255,255,255,0.85)"
-                      style={{ fontFamily: "system-ui, sans-serif" }}
-                    >
-                      {loc.name} · {loc.count}
-                    </text>
-                  </g>
-                );
-              })}
-            </svg>
+            <Globe
+              size={560}
+              markers={[
+                ...LOCATIONS.map((l) => ({
+                  location: [l.lat, l.lng] as [number, number],
+                  size: 0.04 + (l.count / maxCount) * 0.08,
+                })),
+                ...INTERNATIONAL.map((l) => ({
+                  location: [l.lat, l.lng] as [number, number],
+                  size: 0.04 + (l.count / maxCount) * 0.06,
+                })),
+              ]}
+            />
 
             <p className="mt-4 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              A stylised map · not to cartographic scale
+              Drag to spin the globe · markers sized by scholars
             </p>
           </motion.div>
+
 
           {/* Distribution table */}
           <motion.div
