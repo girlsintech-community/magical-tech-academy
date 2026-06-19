@@ -68,106 +68,29 @@ export function ScholarsSection() {
                 Map of the Realm
               </div>
               <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                {totalIndia} scholars · India
+                {totalIndia + totalIntl} scholars worldwide
               </p>
             </div>
 
-            <svg
-              viewBox={`0 0 ${VB_W} ${VB_H}`}
-              className="h-auto w-full"
-              role="img"
-              aria-label="Map of India showing where Hogwartz scholars come from"
-            >
-              <defs>
-                <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="var(--gold)" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="var(--gold)" stopOpacity="0" />
-                </radialGradient>
-              </defs>
-
-              {/* Subtle starfield */}
-              {Array.from({ length: 40 }).map((_, i) => {
-                const x = (i * 137) % VB_W;
-                const y = (i * 71) % VB_H;
-                return <circle key={i} cx={x} cy={y} r="0.6" fill="white" opacity="0.18" />;
-              })}
-
-              {/* India outline (projected from lat/lng waypoints) */}
-              <path
-                d={
-                  "M " +
-                  INDIA_OUTLINE.map(([lat, lng]) => {
-                    const p = project(lat, lng);
-                    return `${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
-                  }).join(" L ") +
-                  " Z"
-                }
-                fill="rgba(255,180,80,0.06)"
-                stroke="rgba(255,180,80,0.55)"
-                strokeWidth="1.2"
-                strokeLinejoin="round"
-              />
-
-
-              {/* Constellation lines connecting major hubs */}
-              {LOCATIONS.slice(0, 5).map((a, i) => {
-                const b = LOCATIONS[(i + 1) % 5];
-                const pa = project(a.lat, a.lng);
-                const pb = project(b.lat, b.lng);
-                return (
-                  <line
-                    key={`l-${i}`}
-                    x1={pa.x}
-                    y1={pa.y}
-                    x2={pb.x}
-                    y2={pb.y}
-                    stroke="var(--gold)"
-                    strokeOpacity="0.18"
-                    strokeDasharray="2 4"
-                  />
-                );
-              })}
-
-              {/* Markers */}
-              {LOCATIONS.map((loc) => {
-                const { x, y } = project(loc.lat, loc.lng);
-                const r = 4 + (loc.count / maxCount) * 10;
-                return (
-                  <g key={loc.name}>
-                    <circle cx={x} cy={y} r={r * 2.4} fill="url(#dotGlow)" />
-                    <motion.circle
-                      cx={x}
-                      cy={y}
-                      r={r}
-                      fill="var(--gold)"
-                      fillOpacity="0.85"
-                      stroke="white"
-                      strokeOpacity="0.9"
-                      strokeWidth="1"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.05 * loc.count }}
-                      style={{ transformOrigin: `${x}px ${y}px` }}
-                    />
-                    <text
-                      x={x + r + 4}
-                      y={y + 3}
-                      fontSize="9"
-                      fill="rgba(255,255,255,0.85)"
-                      style={{ fontFamily: "system-ui, sans-serif" }}
-                    >
-                      {loc.name} · {loc.count}
-                    </text>
-                  </g>
-                );
-              })}
-            </svg>
+            <Globe
+              size={560}
+              markers={[
+                ...LOCATIONS.map((l) => ({
+                  location: [l.lat, l.lng] as [number, number],
+                  size: 0.04 + (l.count / maxCount) * 0.08,
+                })),
+                ...INTERNATIONAL.map((l) => ({
+                  location: [l.lat, l.lng] as [number, number],
+                  size: 0.04 + (l.count / maxCount) * 0.06,
+                })),
+              ]}
+            />
 
             <p className="mt-4 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              A stylised map · not to cartographic scale
+              Drag to spin the globe · markers sized by scholars
             </p>
           </motion.div>
+
 
           {/* Distribution table */}
           <motion.div
