@@ -34,19 +34,27 @@ export function Globe({ markers, size = 600 }: { markers: GlobeMarker[]; size?: 
       markerColor: [255 / 255, 196 / 255, 92 / 255],
       glowColor: [1, 0.75, 0.35],
       markers: markers.map((m) => ({ location: m.location, size: m.size })),
-      onRender: (state) => {
-        if (pointerInteracting.current === null) phiRef.current += 0.003;
-        state.phi = phiRef.current + pointerDelta.current;
-        state.width = width * 2;
-        state.height = width * 2;
-      },
     });
 
+    let raf = 0;
+    const tick = () => {
+      if (pointerInteracting.current === null) phiRef.current += 0.003;
+      globe.update({
+        phi: phiRef.current + pointerDelta.current,
+        width: width * 2,
+        height: width * 2,
+      });
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
     return () => {
+      cancelAnimationFrame(raf);
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
   }, [markers]);
+
 
   return (
     <div
