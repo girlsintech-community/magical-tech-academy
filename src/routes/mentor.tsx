@@ -12,6 +12,8 @@ import rashmiPhoto from "@/assets/mentor-rashmi.jpg";
 import shilpiPhoto from "@/assets/mentor-shilpi.png";
 import anjaliPhoto from "@/assets/mentor-anjali.png";
 import manishkaPhoto from "@/assets/mentor-manishka.jpg";
+import minalPhoto from "@/assets/mentor-minal.jpg";
+import avyanaPhoto from "@/assets/mentor-avyana.jpg";
 
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
