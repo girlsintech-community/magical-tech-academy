@@ -52,8 +52,8 @@ const FEATURED_MENTORS = [
   },
   {
     name: "Anjali Rout",
-    company: "Greater Noida Institute of Technology",
-    designation: "AI Researcher & Tech Entrepreneur",
+    company: "Venture Bots · Mentroid · FlyRank",
+    designation: "Founder @ Venture Bots | AI Management Lead @ Mentroid | ML Intern @ FlyRank",
     linkedin: "https://www.linkedin.com/in/anjali-rout-117752357",
     house: "Order of the Algorithm",
     photo: anjaliPhoto,
@@ -65,6 +65,22 @@ const FEATURED_MENTORS = [
     linkedin: "https://www.linkedin.com/in/manishka-dubey-871a65202",
     house: "Circle of Makers",
     photo: manishkaPhoto,
+  },
+  {
+    name: "Minal Dalal",
+    company: "",
+    designation: "Mentor",
+    linkedin: "",
+    house: "Council of Elders",
+    photo: minalPhoto,
+  },
+  {
+    name: "Avyana Mehta",
+    company: "Plastic2Build",
+    designation: "Founder @ Plastic2Build",
+    linkedin: "",
+    house: "Circle of Founders",
+    photo: avyanaPhoto,
   },
 ];
 
