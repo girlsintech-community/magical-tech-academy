@@ -140,7 +140,7 @@ export function Navbar() {
               </a>
             ))}
             <Link to="/mentor" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-white/5">
-              Become a mentor
+              Become a Professor
             </Link>
           </div>
         </div>
