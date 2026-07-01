@@ -121,20 +121,20 @@ function MentorPage() {
         <div className="mt-8 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-gold">For grown-up wizards</p>
           <h1 className="font-display mt-3 text-4xl sm:text-6xl">
-            <span className="shimmer-text">Become a mentor</span>
+            <span className="shimmer-text">Become a Professor</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sm text-foreground/75 sm:text-base">
             Designers, engineers, founders, artists, teachers — share your craft with 200 of India&apos;s most curious young builders.
           </p>
         </div>
 
-        {/* Hall of Mentors */}
+        {/* Hall of Professors */}
         <section className="mt-16">
           <div className="text-center">
-            <p className="text-[10px] uppercase tracking-[0.4em] text-gold">The Hall of Mentors</p>
+            <p className="text-[10px] uppercase tracking-[0.4em] text-gold">The Hall of Professors</p>
             <h2 className="font-display mt-2 text-2xl sm:text-3xl">Our sworn-in guides</h2>
             <p className="mx-auto mt-2 max-w-md text-xs text-muted-foreground">
-              The Sorting Hat has spoken. More mentors shall be revealed as the moon turns.
+              The Sorting Hat has spoken. More Professors shall be revealed as the moon turns.
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
