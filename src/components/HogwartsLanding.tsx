@@ -15,6 +15,8 @@ import { TournamentsSection } from "@/components/landing/TournamentsSection";
 import { FaqSection } from "@/components/landing/FaqSection";
 import { ImpactSection } from "@/components/landing/ImpactSection";
 import { ScholarsSection } from "@/components/landing/ScholarsSection";
+import { StudentsSection } from "@/components/landing/StudentsSection";
+import { LibrarySection } from "@/components/landing/LibrarySection";
 import { ScrollToTop } from "@/components/magic/ScrollToTop";
 
 export function HogwartsLanding() {
