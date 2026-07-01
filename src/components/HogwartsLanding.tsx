@@ -39,6 +39,8 @@ export function HogwartsLanding() {
         <TimelineSection />
         <LearnSection />
         <ScholarsSection />
+        <StudentsSection />
+        <LibrarySection />
         <TournamentsSection />
         <TeamSection />
         <FaqSection />
