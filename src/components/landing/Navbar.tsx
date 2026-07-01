@@ -111,7 +111,7 @@ export function Navbar() {
                 : "border-[color:var(--gold)]/40 text-foreground hover:border-[color:var(--gold)] hover:text-gold"
             }`}
           >
-            Mentor
+            Professors
           </Link>
         </div>
 
