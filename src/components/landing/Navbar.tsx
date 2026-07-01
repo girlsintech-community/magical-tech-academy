@@ -6,6 +6,7 @@ const NAV = [
   { to: "/#houses", label: "Houses" },
   { to: "/#journey", label: "Journey" },
   { to: "/#scholars", label: "Scholars" },
+  { to: "/#library", label: "Library" },
   { to: "/#tournaments", label: "Tournaments" },
   { to: "/#team", label: "Team" },
   { to: "/photobooth", label: "Photo Booth" },
@@ -110,7 +111,7 @@ export function Navbar() {
                 : "border-[color:var(--gold)]/40 text-foreground hover:border-[color:var(--gold)] hover:text-gold"
             }`}
           >
-            Mentor
+            Professors
           </Link>
         </div>
 
@@ -139,7 +140,7 @@ export function Navbar() {
               </a>
             ))}
             <Link to="/mentor" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-white/5">
-              Become a mentor
+              Become a Professor
             </Link>
           </div>
         </div>

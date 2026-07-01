@@ -14,6 +14,7 @@ import anjaliPhoto from "@/assets/mentor-anjali.png";
 import manishkaPhoto from "@/assets/mentor-manishka.jpg";
 import minalPhoto from "@/assets/mentor-minal.jpg";
 import avyanaPhoto from "@/assets/mentor-avyana.jpg";
+import dakshAsset from "@/assets/mentor-daksh.png.asset.json";
 
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
@@ -82,6 +83,22 @@ const FEATURED_MENTORS = [
     house: "Circle of Founders",
     photo: avyanaPhoto,
   },
+  {
+    name: "Daksh Mehan",
+    company: "WeMakeAnyWebsites · DnD Techsolutions",
+    designation: "Founder and CEO",
+    linkedin: "https://www.linkedin.com/in/daksh-mehan-985939294/",
+    house: "Circle of Founders",
+    photo: dakshAsset.url,
+  },
+  {
+    name: "Uddipa Pal",
+    company: "NIOS",
+    designation: "Researcher",
+    linkedin: "https://www.linkedin.com/in/uddipa-pal",
+    house: "Order of Scholars",
+    photo: null as string | null,
+  },
 ];
 
 
@@ -104,20 +121,20 @@ function MentorPage() {
         <div className="mt-8 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-gold">For grown-up wizards</p>
           <h1 className="font-display mt-3 text-4xl sm:text-6xl">
-            <span className="shimmer-text">Become a mentor</span>
+            <span className="shimmer-text">Become a Professor</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sm text-foreground/75 sm:text-base">
             Designers, engineers, founders, artists, teachers — share your craft with 200 of India&apos;s most curious young builders.
           </p>
         </div>
 
-        {/* Hall of Mentors */}
+        {/* Hall of Professors */}
         <section className="mt-16">
           <div className="text-center">
-            <p className="text-[10px] uppercase tracking-[0.4em] text-gold">The Hall of Mentors</p>
+            <p className="text-[10px] uppercase tracking-[0.4em] text-gold">The Hall of Professors</p>
             <h2 className="font-display mt-2 text-2xl sm:text-3xl">Our sworn-in guides</h2>
             <p className="mx-auto mt-2 max-w-md text-xs text-muted-foreground">
-              The Sorting Hat has spoken. More mentors shall be revealed as the moon turns.
+              The Sorting Hat has spoken. More Professors shall be revealed as the moon turns.
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -136,12 +153,20 @@ function MentorPage() {
                     ✦
                   </div>
                   <div className="relative aspect-[4/5] w-full overflow-hidden">
-                    <img
-                      src={m.photo}
-                      alt={m.name}
-                      className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
-                      loading="lazy"
-                    />
+                    {m.photo ? (
+                      <img
+                        src={m.photo}
+                        alt={m.name}
+                        className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[color:var(--gold)]/20 via-background to-[color:var(--ember)]/20">
+                        <span className="font-display text-8xl text-gold/70">
+                          {m.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}
+                        </span>
+                      </div>
+                    )}
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
                   </div>
                   <div className="flex flex-col gap-2 p-6 md:p-7">
