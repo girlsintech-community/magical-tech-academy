@@ -83,6 +83,22 @@ const FEATURED_MENTORS = [
     house: "Circle of Founders",
     photo: avyanaPhoto,
   },
+  {
+    name: "Daksh Mehan",
+    company: "WeMakeAnyWebsites · DnD Techsolutions",
+    designation: "Founder and CEO",
+    linkedin: "https://www.linkedin.com/in/daksh-mehan-985939294/",
+    house: "Circle of Founders",
+    photo: dakshAsset.url,
+  },
+  {
+    name: "Uddipa Pal",
+    company: "NIOS",
+    designation: "Researcher",
+    linkedin: "https://www.linkedin.com/in/uddipa-pal",
+    house: "Order of Scholars",
+    photo: null as string | null,
+  },
 ];
 
 
