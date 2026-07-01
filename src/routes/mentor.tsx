@@ -153,12 +153,20 @@ function MentorPage() {
                     ✦
                   </div>
                   <div className="relative aspect-[4/5] w-full overflow-hidden">
-                    <img
-                      src={m.photo}
-                      alt={m.name}
-                      className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
-                      loading="lazy"
-                    />
+                    {m.photo ? (
+                      <img
+                        src={m.photo}
+                        alt={m.name}
+                        className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[color:var(--gold)]/20 via-background to-[color:var(--ember)]/20">
+                        <span className="font-display text-8xl text-gold/70">
+                          {m.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}
+                        </span>
+                      </div>
+                    )}
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
                   </div>
                   <div className="flex flex-col gap-2 p-6 md:p-7">
