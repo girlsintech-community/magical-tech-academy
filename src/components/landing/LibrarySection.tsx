@@ -97,7 +97,7 @@ export function LibrarySection() {
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {CLASSES.map((c, i) => (
-              <VideoCard key={c.url} url={c.url} title={c.title} index={i} />
+              <VideoCard key={c.url} url={c.url} title={c.title} speaker={c.speaker} role={c.role} index={i} />
             ))}
           </div>
         </div>
