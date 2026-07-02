@@ -90,7 +90,7 @@ const FEATURED_MENTORS = [
     designation: "Founder and CEO",
     linkedin: "https://www.linkedin.com/in/daksh-mehan-985939294/",
     house: "Circle of Founders",
-    photo: dakshAsset.url,
+    photo: null,
   },
   {
     name: "Uddipa Pal",
