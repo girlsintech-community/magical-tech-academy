@@ -36,7 +36,7 @@ const PITCHES = [
   { url: "https://www.youtube.com/watch?v=gZiLX0CB5WQ", title: "RiSync", speaker: "Riddhish Singh", role: "Hogwartz Hacks Pitch" },
 ];
 
-function VideoCard({ url, title, index }: { url: string; title: string; index: number }) {
+function VideoCard({ url, title, speaker, role, index }: { url: string; title: string; speaker: string; role: string; index: number }) {
   const id = ytId(url);
   return (
     <motion.a
