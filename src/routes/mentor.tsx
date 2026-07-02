@@ -98,7 +98,7 @@ const FEATURED_MENTORS = [
     designation: "Researcher",
     linkedin: "https://www.linkedin.com/in/uddipa-pal",
     house: "Order of Scholars",
-    photo: null as string | null,
+    photo: uddipaAsset.url,
   },
 ];
 
