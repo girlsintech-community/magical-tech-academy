@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Linkedin, Globe, MapPin, Sparkles, Instagram } from "lucide-react";
 import { SectionHeader } from "./HousesSection";
+import manikAsset from "@/assets/mentor-daksh.png.asset.json";
 
 // Served from /public/team — works on every host (Lovable preview AND Vercel).
 const TEAM_PHOTOS = {
   misha: "/team/team-misha-2026.jpg",
   sarah: "/team/team-sarah-2026.jpg",
-  manik: "/team/team-manik.png",
+  manik: manikAsset.url,
   raksa: "/team/team-raksa-2026.png",
   vaishnavi: "/team/team-vaishnavi-2026.png",
   abhijna: "/team/team-abhijna-2026.png",
@@ -128,7 +129,7 @@ export function TeamSection() {
           subtitle="The witches and wizards who brew this fortnight of magic into being."
         />
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m, i) => (
             <motion.div
               key={m.name}
@@ -136,76 +137,74 @@ export function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.06 }}
-              className="magic-card group relative overflow-hidden rounded-3xl p-6 text-center"
+              className="magic-card group relative flex flex-col overflow-hidden rounded-3xl"
             >
-              <div className="absolute -right-8 -top-8 text-7xl opacity-10 transition group-hover:opacity-25">
+              <div className="absolute -right-6 -top-6 z-10 text-6xl opacity-10 transition group-hover:opacity-30">
                 ✦
               </div>
 
-              <div className="relative mx-auto h-32 w-32">
-                <div className="absolute inset-0 -m-1 rounded-full bg-gradient-to-br from-[color:var(--gold)] via-[color:var(--ember)] to-[color:var(--gold)] opacity-70 blur-md transition group-hover:opacity-100" />
-                <div className="relative h-full w-full overflow-hidden rounded-full ring-2 ring-[color:var(--gold)]/70 shadow-[0_0_45px_-8px_oklch(0.72_0.22_45/0.7)]">
-                  {m.photo ? (
-                    <img
-                      src={m.photo}
-                      alt={m.name}
-                      className="relative z-10 block h-full w-full bg-background object-cover transition duration-700 group-hover:scale-110"
-                      loading={i < 3 ? "eager" : "lazy"}
-                      decoding="async"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[color:var(--gold)]/30 via-background to-[color:var(--ember)]/30 font-display text-3xl text-gold">
+              <div className="relative aspect-[4/5] w-full overflow-hidden">
+                {m.photo ? (
+                  <img
+                    src={m.photo}
+                    alt={m.name}
+                    className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[color:var(--gold)]/20 via-background to-[color:var(--ember)]/20">
+                    <span className="font-display text-8xl text-gold/70">
                       {initials(m.name)}
-                    </div>
+                    </span>
+                  </div>
+                )}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
+              </div>
+
+              <div className="flex flex-col gap-2 p-6 md:p-7">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-gold">Order of hogwartz</p>
+                <h3 className="font-display text-2xl text-gold sm:text-3xl">{m.name}</h3>
+                <p className="text-sm text-foreground/80">{m.title}</p>
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <MapPin className="h-3 w-3" /> <span>{m.city}</span>
+                </div>
+                <span className="mt-1 inline-flex w-fit items-center gap-1 rounded-full border border-[color:var(--gold)]/30 bg-background/40 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                  <Sparkles className="h-3 w-3 text-gold" /> Patronus ~ {m.patronus}
+                </span>
+
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  {m.linkedin && (
+                    <a
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/40 px-3 py-1.5 text-[11px] text-foreground/85 transition hover:border-[color:var(--gold)] hover:text-gold"
+                    >
+                      <Linkedin className="h-3.5 w-3.5" /> LinkedIn
+                    </a>
+                  )}
+                  {m.instagram && (
+                    <a
+                      href={m.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/40 px-3 py-1.5 text-[11px] text-foreground/85 transition hover:border-[color:var(--gold)] hover:text-gold"
+                    >
+                      <Instagram className="h-3.5 w-3.5" /> Instagram
+                    </a>
+                  )}
+                  {m.website && (
+                    <a
+                      href={m.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/40 px-3 py-1.5 text-[11px] text-foreground/85 transition hover:border-[color:var(--gold)] hover:text-gold"
+                    >
+                      <Globe className="h-3.5 w-3.5" /> Diaries
+                    </a>
                   )}
                 </div>
-              </div>
-
-              <h3 className="font-display mt-5 text-2xl text-gold">{m.name}</h3>
-              <p className="mt-1 text-xs uppercase tracking-[0.3em] text-foreground/70">
-                {m.title}
-              </p>
-
-              <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
-                <MapPin className="h-3 w-3" />
-                <span>{m.city}</span>
-              </div>
-
-              <div className="mt-4 inline-flex items-center gap-1 rounded-full border border-[color:var(--gold)]/30 bg-background/40 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-foreground/75">
-                <Sparkles className="h-3 w-3 text-gold" /> Patronus ~ {m.patronus}
-              </div>
-
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-                {m.linkedin && (
-                  <a
-                    href={m.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/40 px-3 py-1.5 text-[11px] text-foreground/85 transition hover:border-[color:var(--gold)] hover:text-gold"
-                  >
-                    <Linkedin className="h-3.5 w-3.5" /> LinkedIn
-                  </a>
-                )}
-                {m.instagram && (
-                  <a
-                    href={m.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/40 px-3 py-1.5 text-[11px] text-foreground/85 transition hover:border-[color:var(--gold)] hover:text-gold"
-                  >
-                    <Instagram className="h-3.5 w-3.5" /> Instagram
-                  </a>
-                )}
-                {m.website && (
-                  <a
-                    href={m.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--gold)]/40 px-3 py-1.5 text-[11px] text-foreground/85 transition hover:border-[color:var(--gold)] hover:text-gold"
-                  >
-                    <Globe className="h-3.5 w-3.5" /> Diaries
-                  </a>
-                )}
               </div>
             </motion.div>
           ))}

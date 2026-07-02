@@ -6,6 +6,7 @@ import { SoundToggle } from "@/components/magic/SoundToggle";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ScholarsSection } from "@/components/landing/ScholarsSection";
+import { StudentsSection } from "@/components/landing/StudentsSection";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/scholars")({
@@ -33,6 +34,7 @@ function ScholarsPage() {
           </Link>
         </div>
         <ScholarsSection />
+        <StudentsSection />
         <Footer />
       </main>
     </>

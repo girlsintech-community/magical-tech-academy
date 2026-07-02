@@ -14,7 +14,7 @@ import anjaliPhoto from "@/assets/mentor-anjali.png";
 import manishkaPhoto from "@/assets/mentor-manishka.jpg";
 import minalPhoto from "@/assets/mentor-minal.jpg";
 import avyanaPhoto from "@/assets/mentor-avyana.jpg";
-import dakshAsset from "@/assets/mentor-daksh.png.asset.json";
+
 import uddipaAsset from "@/assets/student-uddipa_pal.jpeg.asset.json";
 
 export const Route = createFileRoute("/mentor")({
@@ -90,7 +90,7 @@ const FEATURED_MENTORS = [
     designation: "Founder and CEO",
     linkedin: "https://www.linkedin.com/in/daksh-mehan-985939294/",
     house: "Circle of Founders",
-    photo: dakshAsset.url,
+    photo: null,
   },
   {
     name: "Uddipa Pal",
