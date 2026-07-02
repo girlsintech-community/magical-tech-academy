@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ScholarsRouteImport } from './routes/scholars'
 import { Route as PhotoboothRouteImport } from './routes/photobooth'
 import { Route as MentorRouteImport } from './routes/mentor'
 import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JourneyTokenRouteImport } from './routes/journey.$token'
 
+const ScholarsRoute = ScholarsRouteImport.update({
+  id: '/scholars',
+  path: '/scholars',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PhotoboothRoute = PhotoboothRouteImport.update({
   id: '/photobooth',
   path: '/photobooth',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/apply': typeof ApplyRoute
   '/mentor': typeof MentorRoute
   '/photobooth': typeof PhotoboothRoute
+  '/scholars': typeof ScholarsRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/apply': typeof ApplyRoute
   '/mentor': typeof MentorRoute
   '/photobooth': typeof PhotoboothRoute
+  '/scholars': typeof ScholarsRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRoutesById {
@@ -61,19 +69,33 @@ export interface FileRoutesById {
   '/apply': typeof ApplyRoute
   '/mentor': typeof MentorRoute
   '/photobooth': typeof PhotoboothRoute
+  '/scholars': typeof ScholarsRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/apply' | '/mentor' | '/photobooth' | '/journey/$token'
+  fullPaths:
+    | '/'
+    | '/apply'
+    | '/mentor'
+    | '/photobooth'
+    | '/scholars'
+    | '/journey/$token'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/apply' | '/mentor' | '/photobooth' | '/journey/$token'
+  to:
+    | '/'
+    | '/apply'
+    | '/mentor'
+    | '/photobooth'
+    | '/scholars'
+    | '/journey/$token'
   id:
     | '__root__'
     | '/'
     | '/apply'
     | '/mentor'
     | '/photobooth'
+    | '/scholars'
     | '/journey/$token'
   fileRoutesById: FileRoutesById
 }
@@ -82,11 +104,19 @@ export interface RootRouteChildren {
   ApplyRoute: typeof ApplyRoute
   MentorRoute: typeof MentorRoute
   PhotoboothRoute: typeof PhotoboothRoute
+  ScholarsRoute: typeof ScholarsRoute
   JourneyTokenRoute: typeof JourneyTokenRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/scholars': {
+      id: '/scholars'
+      path: '/scholars'
+      fullPath: '/scholars'
+      preLoaderRoute: typeof ScholarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/photobooth': {
       id: '/photobooth'
       path: '/photobooth'
@@ -130,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApplyRoute: ApplyRoute,
   MentorRoute: MentorRoute,
   PhotoboothRoute: PhotoboothRoute,
+  ScholarsRoute: ScholarsRoute,
   JourneyTokenRoute: JourneyTokenRoute,
 }
 export const routeTree = rootRouteImport
