@@ -68,8 +68,9 @@ function VideoCard({ url, title, speaker, role, index }: { url: string; title: s
         </div>
       </div>
       <div className="flex flex-col gap-1 p-4">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-gold/80">Recording</p>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-gold/80">{role}</p>
         <h4 className="font-display text-base text-foreground">{title}</h4>
+        <p className="text-xs text-foreground/70">By {speaker}</p>
       </div>
     </motion.a>
   );
