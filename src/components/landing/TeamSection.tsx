@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Linkedin, Globe, MapPin, Sparkles, Instagram } from "lucide-react";
 import { SectionHeader } from "./HousesSection";
+import manikAsset from "@/assets/mentor-daksh.png.asset.json";
 
 // Served from /public/team — works on every host (Lovable preview AND Vercel).
 const TEAM_PHOTOS = {
   misha: "/team/team-misha-2026.jpg",
   sarah: "/team/team-sarah-2026.jpg",
-  manik: "/team/team-manik.png",
+  manik: manikAsset.url,
   raksa: "/team/team-raksa-2026.png",
   vaishnavi: "/team/team-vaishnavi-2026.png",
   abhijna: "/team/team-abhijna-2026.png",
