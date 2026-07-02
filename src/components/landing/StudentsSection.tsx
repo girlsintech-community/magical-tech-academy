@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
 import { Linkedin, MapPin, GraduationCap, Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/landing/HousesSection";
+import aaravAsset from "@/assets/student-aarav_dua.jpg.asset.json";
+import urviAsset from "@/assets/student-urvi.jpg.asset.json";
+import shaistaAsset from "@/assets/student-shaista.jpeg.asset.json";
+import abhaAsset from "@/assets/student-abha.jpg.asset.json";
+import ishaAsset from "@/assets/student-isha.jpeg.asset.json";
+import drishtiAsset from "@/assets/student-drishti_gupta.jpg.asset.json";
+
+const PHOTOS: Record<string, string> = {
+  "Aarav Dua": aaravAsset.url,
+  "Urvi Bhat": urviAsset.url,
+  "Shaista Kalra": shaistaAsset.url,
+  "Abha Chiney": abhaAsset.url,
+  "S. A. Isha Yanvi": ishaAsset.url,
+  "Drishti Gupta": drishtiAsset.url,
+};
 
 type Student = {
   name: string;
@@ -88,7 +103,7 @@ export function StudentsSection() {
                     style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }}
                   />
                   <div
-                    className="relative grid h-16 w-16 shrink-0 place-items-center rounded-xl font-display text-2xl"
+                    className="relative grid h-16 w-16 shrink-0 overflow-hidden place-items-center rounded-xl font-display text-2xl"
                     style={{
                       background: `radial-gradient(circle at 30% 20%, ${color}55, transparent 70%), rgba(255,255,255,0.04)`,
                       border: `1px solid ${color}66`,
@@ -96,7 +111,11 @@ export function StudentsSection() {
                       textShadow: `0 0 12px ${color}88`,
                     }}
                   >
-                    {monogram(s.name)}
+                    {PHOTOS[s.name] ? (
+                      <img src={PHOTOS[s.name]} alt={s.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                    ) : (
+                      monogram(s.name)
+                    )}
                     <Sparkles className="absolute -right-1 -top-1 h-3 w-3 text-gold opacity-70" />
                   </div>
                   <div className="min-w-0 flex-1">
