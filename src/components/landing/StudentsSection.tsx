@@ -103,7 +103,7 @@ export function StudentsSection() {
                     style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }}
                   />
                   <div
-                    className="relative grid h-16 w-16 shrink-0 place-items-center rounded-xl font-display text-2xl"
+                    className="relative grid h-16 w-16 shrink-0 overflow-hidden place-items-center rounded-xl font-display text-2xl"
                     style={{
                       background: `radial-gradient(circle at 30% 20%, ${color}55, transparent 70%), rgba(255,255,255,0.04)`,
                       border: `1px solid ${color}66`,
@@ -111,7 +111,11 @@ export function StudentsSection() {
                       textShadow: `0 0 12px ${color}88`,
                     }}
                   >
-                    {monogram(s.name)}
+                    {PHOTOS[s.name] ? (
+                      <img src={PHOTOS[s.name]} alt={s.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                    ) : (
+                      monogram(s.name)
+                    )}
                     <Sparkles className="absolute -right-1 -top-1 h-3 w-3 text-gold opacity-70" />
                   </div>
                   <div className="min-w-0 flex-1">
