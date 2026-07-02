@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
 import { Linkedin, MapPin, GraduationCap, Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/landing/HousesSection";
+import aaravAsset from "@/assets/student-aarav_dua.jpg.asset.json";
+import urviAsset from "@/assets/student-urvi.jpg.asset.json";
+import shaistaAsset from "@/assets/student-shaista.jpeg.asset.json";
+import abhaAsset from "@/assets/student-abha.jpg.asset.json";
+import ishaAsset from "@/assets/student-isha.jpeg.asset.json";
+import drishtiAsset from "@/assets/student-drishti_gupta.jpg.asset.json";
+
+const PHOTOS: Record<string, string> = {
+  "Aarav Dua": aaravAsset.url,
+  "Urvi Bhat": urviAsset.url,
+  "Shaista Kalra": shaistaAsset.url,
+  "Abha Chiney": abhaAsset.url,
+  "S. A. Isha Yanvi": ishaAsset.url,
+  "Drishti Gupta": drishtiAsset.url,
+};
 
 type Student = {
   name: string;
