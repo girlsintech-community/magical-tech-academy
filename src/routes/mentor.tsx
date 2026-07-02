@@ -138,7 +138,7 @@ function MentorPage() {
               The Sorting Hat has spoken. More Professors shall be revealed as the moon turns.
             </p>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURED_MENTORS.map((m) => {
               const Tag: any = m.linkedin ? "a" : "div";
               const linkProps = m.linkedin
