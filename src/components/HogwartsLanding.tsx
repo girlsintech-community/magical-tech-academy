@@ -13,7 +13,7 @@ import { LearnSection } from "@/components/landing/LearnSection";
 import { TeamSection } from "@/components/landing/TeamSection";
 import { FaqSection } from "@/components/landing/FaqSection";
 import { ImpactSection } from "@/components/landing/ImpactSection";
-import { StudentsSection } from "@/components/landing/StudentsSection";
+
 import { LibrarySection } from "@/components/landing/LibrarySection";
 import { ScrollToTop } from "@/components/magic/ScrollToTop";
 
