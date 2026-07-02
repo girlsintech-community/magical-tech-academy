@@ -116,7 +116,7 @@ export function LibrarySection() {
           </p>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PITCHES.map((p, i) => (
-              <VideoCard key={p.url} url={p.url} title={p.title} index={i} />
+              <VideoCard key={p.url} url={p.url} title={p.title} speaker={p.speaker} role={p.role} index={i} />
             ))}
           </div>
         </div>
