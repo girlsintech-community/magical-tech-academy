@@ -34,6 +34,7 @@ function ScholarsPage() {
           </Link>
         </div>
         <ScholarsSection />
+        <StudentsSection />
         <Footer />
       </main>
     </>
