@@ -38,11 +38,13 @@ const TEAM: Member[] = [
     patronus: "Phoenix",
   },
   {
-    name: "Sarah Auma",
-    title: "Social Media Manager ~ Owl Post",
-    city: "Kenya",
-    photo: TEAM_PHOTOS.sarah,
-    patronus: "Lioness",
+    name: "Vijay Laxmi",
+    title: "Apprentice of the Order",
+    city: "Delhi",
+    photo: TEAM_PHOTOS.vijay,
+    linkedin: "https://www.linkedin.com/in/laxmi-vijay/",
+    instagram: "https://www.instagram.com/_vijay.laxmi__",
+    patronus: "Falcon",
   },
   {
     name: "Manik",
@@ -98,13 +100,11 @@ const TEAM: Member[] = [
     patronus: "Raven",
   },
   {
-    name: "Vijay Laxmi",
-    title: "Apprentice of the Order",
-    city: "Delhi",
-    photo: TEAM_PHOTOS.vijay,
-    linkedin: "https://www.linkedin.com/in/laxmi-vijay/",
-    instagram: "https://www.instagram.com/_vijay.laxmi__",
-    patronus: "Falcon",
+    name: "Sarah Auma",
+    title: "Social Media Manager ~ Owl Post",
+    city: "Kenya",
+    photo: TEAM_PHOTOS.sarah,
+    patronus: "Lioness",
   },
 ];
 
