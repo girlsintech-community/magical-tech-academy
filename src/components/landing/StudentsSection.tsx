@@ -99,7 +99,7 @@ export function StudentsSection() {
           subtitle={`Meet the ${STUDENTS.length} witches and wizards, ages 9 to 18, from across India who answered the owl's call.`}
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {STUDENTS.map((s, i) => {
             const color = HOUSE_COLORS[i % HOUSE_COLORS.length];
             const Card: any = s.linkedin ? "a" : "div";
@@ -109,54 +109,64 @@ export function StudentsSection() {
             return (
               <motion.div
                 key={s.name + i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: (i % 6) * 0.05 }}
+                transition={{ duration: 0.55, delay: (i % 6) * 0.05 }}
               >
                 <Card
                   {...linkProps}
-                  className="magic-card group relative flex h-full items-start gap-4 overflow-hidden rounded-2xl p-4"
+                  className="magic-card group relative flex h-full flex-col overflow-hidden rounded-3xl"
                 >
                   <div
-                    className="absolute inset-x-0 top-0 h-[2px] opacity-70"
+                    className="absolute inset-x-0 top-0 z-10 h-[2px] opacity-80"
                     style={{ background: `linear-gradient(90deg, transparent, ${color}, transparent)` }}
                   />
-                  <div
-                    className="relative grid h-16 w-16 shrink-0 overflow-hidden place-items-center rounded-xl font-display text-2xl"
-                    style={{
-                      background: `radial-gradient(circle at 30% 20%, ${color}55, transparent 70%), rgba(255,255,255,0.04)`,
-                      border: `1px solid ${color}66`,
-                      color,
-                      textShadow: `0 0 12px ${color}88`,
-                    }}
-                  >
+                  <div className="absolute -right-6 -top-6 z-10 text-6xl opacity-10 transition group-hover:opacity-30">✦</div>
+
+                  <div className="relative aspect-[4/5] w-full overflow-hidden">
                     {PHOTOS[s.name] ? (
-                      <img src={PHOTOS[s.name]} alt={s.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                      <img
+                        src={PHOTOS[s.name]}
+                        alt={s.name}
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
+                      />
                     ) : (
-                      monogram(s.name)
+                      <div
+                        className="absolute inset-0 flex items-center justify-center"
+                        style={{
+                          background: `radial-gradient(circle at 30% 20%, ${color}44, transparent 65%), linear-gradient(135deg, rgba(255,255,255,0.04), rgba(0,0,0,0.35))`,
+                        }}
+                      >
+                        <span
+                          className="font-display text-8xl"
+                          style={{ color, textShadow: `0 0 24px ${color}88` }}
+                        >
+                          {monogram(s.name)}
+                        </span>
+                      </div>
                     )}
-                    <Sparkles className="absolute -right-1 -top-1 h-3 w-3 text-gold opacity-70" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/85 to-transparent" />
+                    <Sparkles className="absolute right-3 top-3 h-4 w-4 text-gold/80" />
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="font-display text-lg leading-tight text-foreground">
-                      {s.name}
-                    </h3>
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-gold/80">
-                      {s.age ? `Year ${s.age}` : ""}
-                      {s.age && s.gender ? " , " : ""}
-                      {s.gender}
+
+                  <div className="flex flex-col gap-2 p-6">
+                    <p className="text-[10px] uppercase tracking-[0.4em]" style={{ color }}>
+                      {s.age ? `Year ${s.age}` : "Scholar"}{s.age && s.gender ? " , " : ""}{s.gender}
                     </p>
-                    <p className="mt-1.5 flex items-center gap-1 text-xs text-foreground/70">
+                    <h3 className="font-display text-2xl text-gold">{s.name}</h3>
+                    <p className="flex items-center gap-1.5 text-xs text-foreground/75">
                       <MapPin className="h-3 w-3 shrink-0" /> {s.location}
                     </p>
-                    <p className="mt-1 flex items-start gap-1 text-[11px] text-muted-foreground">
+                    <p className="flex items-start gap-1.5 text-xs text-muted-foreground">
                       <GraduationCap className="mt-0.5 h-3 w-3 shrink-0" />
                       <span className="line-clamp-2">{s.school}</span>
                     </p>
                     {s.linkedin && (
-                      <span className="mt-2 inline-flex items-center gap-1 text-[11px] text-gold opacity-80 transition group-hover:translate-x-0.5">
-                        <Linkedin className="h-3 w-3" /> View scroll
+                      <span className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-[color:var(--gold)]/40 px-3 py-1.5 text-[11px] text-foreground/85 transition group-hover:border-[color:var(--gold)] group-hover:text-gold">
+                        <Linkedin className="h-3.5 w-3.5" /> View scroll
                       </span>
                     )}
                   </div>
