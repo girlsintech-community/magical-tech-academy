@@ -57,6 +57,8 @@ const PHOTOS: Record<string, string> = {
   "Dakshika Gupta": dakshikaAsset.url,
   "Venkata Sai Chebolu": venkatAsset.url,
   "Ayesha Arif Khan": ayeshaAsset.url,
+  "Nikita Dhull": nikitaAsset.url,
+  "Lavanya Anand": lavanyaAsset.url,
 };
 
 type Student = {
