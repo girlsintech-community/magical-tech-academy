@@ -27,6 +27,8 @@ import kavishaAsset from "@/assets/student-kavisha.jpg.asset.json";
 import dakshikaAsset from "@/assets/student-dakshika.jpeg.asset.json";
 import venkatAsset from "@/assets/student-venkat.png.asset.json";
 import ayeshaAsset from "@/assets/student-ayesha.jpg.asset.json";
+import nikitaAsset from "@/assets/student-nikita_dhull.jpg.asset.json";
+import lavanyaAsset from "@/assets/student-lavanya.jpg.asset.json";
 
 const PHOTOS: Record<string, string> = {
   "Aarav Dua": aaravAsset.url,
