@@ -17,6 +17,16 @@ import anvitaAsset from "@/assets/student-anvita.png.asset.json";
 import harshitaAsset from "@/assets/student-harshita.jpg.asset.json";
 import ericAsset from "@/assets/student-eric_jadon.jpg.asset.json";
 import akshitaAsset from "@/assets/student-akshita_1.jpg.asset.json";
+import suhanaAsset from "@/assets/student-suhana.jpg.asset.json";
+import saranshAsset from "@/assets/student-saransh.png.asset.json";
+import harshilAsset from "@/assets/student-harshil_vegad.jpg.asset.json";
+import sarasAsset from "@/assets/student-saras_patil.jpg.asset.json";
+import manideepAsset from "@/assets/student-manideep.jpg.asset.json";
+import johnAsset from "@/assets/student-John_Antony.jpeg.asset.json";
+import kavishaAsset from "@/assets/student-kavisha.jpg.asset.json";
+import dakshikaAsset from "@/assets/student-dakshika.jpeg.asset.json";
+import venkatAsset from "@/assets/student-venkat.png.asset.json";
+import ayeshaAsset from "@/assets/student-ayesha.jpg.asset.json";
 
 const PHOTOS: Record<string, string> = {
   "Aarav Dua": aaravAsset.url,
@@ -35,6 +45,16 @@ const PHOTOS: Record<string, string> = {
   "Harshita Saharan": harshitaAsset.url,
   "Eric Jadon P": ericAsset.url,
   "Akshita B": akshitaAsset.url,
+  "Suhana Mondal": suhanaAsset.url,
+  "Saransh Bhola": saranshAsset.url,
+  "Harshil Vegad": harshilAsset.url,
+  "Saras Pramod Patil": sarasAsset.url,
+  "Gogula Manideep": manideepAsset.url,
+  "P. John Antony": johnAsset.url,
+  "Kavisha Joshi": kavishaAsset.url,
+  "Dakshika Gupta": dakshikaAsset.url,
+  "Venkata Sai Chebolu": venkatAsset.url,
+  "Ayesha Arif Khan": ayeshaAsset.url,
 };
 
 type Student = {
