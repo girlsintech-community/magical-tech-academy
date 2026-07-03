@@ -8,7 +8,6 @@ import { Footer } from "@/components/landing/Footer";
 import { Hero } from "@/components/landing/Hero";
 import { StagesSection } from "@/components/landing/StagesSection";
 import { HousesSection } from "@/components/landing/HousesSection";
-import { TimelineSection } from "@/components/landing/TimelineSection";
 import { LearnSection } from "@/components/landing/LearnSection";
 import { TeamSection } from "@/components/landing/TeamSection";
 import { FaqSection } from "@/components/landing/FaqSection";
@@ -34,7 +33,6 @@ export function HogwartsLanding() {
         <ImpactSection />
         <StagesSection />
         <HousesSection />
-        <TimelineSection />
         <LearnSection />
         
         <LibrarySection />
