@@ -15,9 +15,6 @@ import manishkaPhoto from "@/assets/mentor-manishka.jpg";
 import minalPhoto from "@/assets/mentor-minal.jpg";
 import avyanaPhoto from "@/assets/mentor-avyana.jpg";
 
-import uddipaAsset from "@/assets/student-uddipa_pal.jpeg.asset.json";
-import dakshAsset from "@/assets/mentor-daksh-new.jpeg.asset.json";
-
 export const Route = createFileRoute("/mentor")({
   component: MentorPage,
   head: () => ({
@@ -91,7 +88,7 @@ const FEATURED_MENTORS = [
     designation: "Founder and CEO",
     linkedin: "https://www.linkedin.com/in/daksh-mehan-985939294/",
     house: "Circle of Founders",
-    photo: dakshAsset.url,
+    photo: "/professors/daksh_mehan.jpeg",
   },
   {
     name: "Uddipa Pal",
@@ -99,7 +96,7 @@ const FEATURED_MENTORS = [
     designation: "Researcher",
     linkedin: "https://www.linkedin.com/in/uddipa-pal",
     house: "Order of Scholars",
-    photo: uddipaAsset.url,
+    photo: "/professors/uddipa_pal.jpeg",
   },
 ];
 

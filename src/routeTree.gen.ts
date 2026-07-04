@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ScrollsRouteImport } from './routes/scrolls'
 import { Route as ScholarsRouteImport } from './routes/scholars'
 import { Route as PhotoboothRouteImport } from './routes/photobooth'
 import { Route as MentorRouteImport } from './routes/mentor'
@@ -16,6 +17,11 @@ import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JourneyTokenRouteImport } from './routes/journey.$token'
 
+const ScrollsRoute = ScrollsRouteImport.update({
+  id: '/scrolls',
+  path: '/scrolls',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScholarsRoute = ScholarsRouteImport.update({
   id: '/scholars',
   path: '/scholars',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/mentor': typeof MentorRoute
   '/photobooth': typeof PhotoboothRoute
   '/scholars': typeof ScholarsRoute
+  '/scrolls': typeof ScrollsRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/mentor': typeof MentorRoute
   '/photobooth': typeof PhotoboothRoute
   '/scholars': typeof ScholarsRoute
+  '/scrolls': typeof ScrollsRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/mentor': typeof MentorRoute
   '/photobooth': typeof PhotoboothRoute
   '/scholars': typeof ScholarsRoute
+  '/scrolls': typeof ScrollsRoute
   '/journey/$token': typeof JourneyTokenRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/mentor'
     | '/photobooth'
     | '/scholars'
+    | '/scrolls'
     | '/journey/$token'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/mentor'
     | '/photobooth'
     | '/scholars'
+    | '/scrolls'
     | '/journey/$token'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/mentor'
     | '/photobooth'
     | '/scholars'
+    | '/scrolls'
     | '/journey/$token'
   fileRoutesById: FileRoutesById
 }
@@ -105,11 +117,19 @@ export interface RootRouteChildren {
   MentorRoute: typeof MentorRoute
   PhotoboothRoute: typeof PhotoboothRoute
   ScholarsRoute: typeof ScholarsRoute
+  ScrollsRoute: typeof ScrollsRoute
   JourneyTokenRoute: typeof JourneyTokenRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/scrolls': {
+      id: '/scrolls'
+      path: '/scrolls'
+      fullPath: '/scrolls'
+      preLoaderRoute: typeof ScrollsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scholars': {
       id: '/scholars'
       path: '/scholars'
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentorRoute: MentorRoute,
   PhotoboothRoute: PhotoboothRoute,
   ScholarsRoute: ScholarsRoute,
+  ScrollsRoute: ScrollsRoute,
   JourneyTokenRoute: JourneyTokenRoute,
 }
 export const routeTree = rootRouteImport

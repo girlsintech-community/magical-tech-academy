@@ -1,64 +1,36 @@
 import { motion } from "framer-motion";
 import { Linkedin, MapPin, GraduationCap, Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/landing/HousesSection";
-import aaravAsset from "@/assets/student-aarav_dua.jpg.asset.json";
-import urviAsset from "@/assets/student-urvi.jpg.asset.json";
-import shaistaAsset from "@/assets/student-shaista.jpeg.asset.json";
-import abhaAsset from "@/assets/student-abha.jpg.asset.json";
-import ishaAsset from "@/assets/student-isha.jpeg.asset.json";
-import drishtiAsset from "@/assets/student-drishti_gupta.jpg.asset.json";
-import riddhishAsset from "@/assets/student-riddhish_singh.jpg.asset.json";
-import hariniAsset from "@/assets/student-harini.jpg.asset.json";
-import advikaAsset from "@/assets/student-advika_mathur.jpg.asset.json";
-import evinAsset from "@/assets/student-evin_jason.jpeg.asset.json";
-import urmiAsset from "@/assets/student-urmi.jpeg.asset.json";
-import devanshiAsset from "@/assets/student-devanshi.jpg.asset.json";
-import anvitaAsset from "@/assets/student-anvita.png.asset.json";
-import harshitaAsset from "@/assets/student-harshita.jpg.asset.json";
-import ericAsset from "@/assets/student-eric_jadon.jpg.asset.json";
-import akshitaAsset from "@/assets/student-akshita_1.jpg.asset.json";
-import suhanaAsset from "@/assets/student-suhana.jpg.asset.json";
-import saranshAsset from "@/assets/student-saransh.png.asset.json";
-import harshilAsset from "@/assets/student-harshil_vegad.jpg.asset.json";
-import sarasAsset from "@/assets/student-saras_patil.jpg.asset.json";
-import manideepAsset from "@/assets/student-manideep.jpg.asset.json";
-import johnAsset from "@/assets/student-John_Antony.jpeg.asset.json";
-import kavishaAsset from "@/assets/student-kavisha.jpg.asset.json";
-import dakshikaAsset from "@/assets/student-dakshika.jpeg.asset.json";
-import venkatAsset from "@/assets/student-venkat.png.asset.json";
-import ayeshaAsset from "@/assets/student-ayesha.jpg.asset.json";
-import nikitaAsset from "@/assets/student-nikita_dhull.jpg.asset.json";
-import lavanyaAsset from "@/assets/student-lavanya.jpg.asset.json";
 
 const PHOTOS: Record<string, string> = {
-  "Aarav Dua": aaravAsset.url,
-  "Urvi Bhat": urviAsset.url,
-  "Shaista Kalra": shaistaAsset.url,
-  "Abha Chiney": abhaAsset.url,
-  "S. A. Isha Yanvi": ishaAsset.url,
-  "Drishti Gupta": drishtiAsset.url,
-  "Riddhish Singh": riddhishAsset.url,
-  "Harini": hariniAsset.url,
-  "Advika Mathur": advikaAsset.url,
-  "Evin Jason P": evinAsset.url,
-  "Urmi Agarwal": urmiAsset.url,
-  "Devanshi Arora": devanshiAsset.url,
-  "Anvita Bhardwaj": anvitaAsset.url,
-  "Harshita Saharan": harshitaAsset.url,
-  "Eric Jadon P": ericAsset.url,
-  "Akshita B": akshitaAsset.url,
-  "Suhana Mondal": suhanaAsset.url,
-  "Saransh Bhola": saranshAsset.url,
-  "Harshil Vegad": harshilAsset.url,
-  "Saras Pramod Patil": sarasAsset.url,
-  "Gogula Manideep": manideepAsset.url,
-  "P. John Antony": johnAsset.url,
-  "Kavisha Joshi": kavishaAsset.url,
-  "Dakshika Gupta": dakshikaAsset.url,
-  "Venkata Sai Chebolu": venkatAsset.url,
-  "Ayesha Arif Khan": ayeshaAsset.url,
-  "Nikita Dhull": nikitaAsset.url,
-  "Lavanya Anand": lavanyaAsset.url,
+  "Aarav Dua": "/scholars/aarav_dua.jpg",
+  "Urvi Bhat": "/scholars/urvi.jpg",
+  "Shaista Kalra": "/scholars/shaista.jpeg",
+  "Abha Chiney": "/scholars/abha.jpg",
+  "S. A. Isha Yanvi": "/scholars/isha.jpeg",
+  "Drishti Gupta": "/scholars/drishti_gupta.jpg",
+  "Riddhish Singh": "/scholars/riddhish_singh.jpg",
+  "Harini": "/scholars/harini.jpg",
+  "Advika Mathur": "/scholars/advika_mathur.jpg",
+  "Evin Jason P": "/scholars/evin_jason.jpeg",
+  "Urmi Agarwal": "/scholars/urmi.jpeg",
+  "Devanshi Arora": "/scholars/devanshi.jpg",
+  "Anvita Bhardwaj": "/scholars/anvita.png",
+  "Harshita Saharan": "/scholars/harshita.jpg",
+  "Eric Jadon P": "/scholars/eric_jadon.jpg",
+  "Akshita B": "/scholars/akshita_1.jpg",
+  "Suhana Mondal": "/scholars/suhana.jpg",
+  "Saransh Bhola": "/scholars/saransh.png",
+  "Harshil Vegad": "/scholars/harshil_vegad.jpg",
+  "Saras Pramod Patil": "/scholars/saras_patil.jpg",
+  "Gogula Manideep": "/scholars/manideep.jpg",
+  "P. John Antony": "/scholars/John_Antony.jpeg",
+  "Kavisha Joshi": "/scholars/kavisha.jpg",
+  "Dakshika Gupta": "/scholars/dakshika.jpeg",
+  "Venkata Sai Chebolu": "/scholars/venkat.png",
+  "Ayesha Arif Khan": "/scholars/ayesha.jpg",
+  "Nikita Dhull": "/scholars/nikita_dhull.jpg",
+  "Lavanya Anand": "/scholars/lavanya.jpg",
 };
 
 type Student = {
