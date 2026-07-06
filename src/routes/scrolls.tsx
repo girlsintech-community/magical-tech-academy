@@ -220,6 +220,38 @@ function ScrollsPage() {
             </p>
           </section>
 
+          <section className="mt-16">
+            <div className="text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-gold">Testimonials & Interviews</p>
+              <h2 className="font-display mt-3 text-3xl sm:text-4xl">
+                <span className="shimmer-text">Voices from the castle</span>
+              </h2>
+            </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {[
+                { name: "Riddhish", id: "PK8omOidlP0" },
+                { name: "Harshita", id: "n7cT55yzNLY" },
+                { name: "Manideep", id: "1liLgpYIigs" },
+              ].map((v) => (
+                <div key={v.id} className="magic-card overflow-hidden rounded-3xl p-3">
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src={`https://www.youtube.com/embed/${v.id}`}
+                      title={`Interview with ${v.name}`}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="mt-3 px-2 pb-2 text-center font-display text-lg text-gold">With {v.name}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+
+
           <section className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {SCROLLS.map((scroll, index) => (
               <motion.article
